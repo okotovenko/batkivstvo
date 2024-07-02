@@ -5244,12 +5244,12 @@ button.swiper-pagination-bullet {
   }
 
   .number-opacity--6 {
-    left: 58%;
+    left: 48%;
     top: 160%;
   }
 
   .number-opacity--8 {
-    left: 43%;
+    left: 33%;
     top: 230%;
   }
 
@@ -5353,10 +5353,6 @@ button.swiper-pagination-bullet {
     font-size: 1.25rem;
   }
 
-  .first::after {
-    display: none;
-  }
-
   .first__bg {
     max-height: 39.1875rem;
     display: none;
@@ -5396,7 +5392,7 @@ button.swiper-pagination-bullet {
     background: top/contain no-repeat url("../img/first/bg-mob.png"); }
 
   .first__container {
-    z-index: -1;
+    z-index: 0;
   }
 
   .first__decor {
