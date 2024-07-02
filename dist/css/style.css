@@ -1539,10 +1539,6 @@ h4 {
      object-position: top;
 }
 
-.first__mob--bg {
-  display: none;
-}
-
 .first__shadow--left {
   position: absolute;
   left: 0;
@@ -4689,12 +4685,12 @@ button.swiper-pagination-bullet {
     height: 3.5rem;
   }
 
-  .first__container h1 {
-    margin-bottom: 3.125rem;
+  .first__container {
+    padding-top: 42.125rem;
   }
 
-  .first__top {
-    padding-top: 42.125rem;
+  .first__container h1 {
+    margin-bottom: 3.125rem;
   }
 
   .first__present {
@@ -5033,12 +5029,12 @@ button.swiper-pagination-bullet {
     height: 2.5rem;
   }
 
-  .first__container h1 {
-    margin-bottom: 1.25rem;
+  .first__container {
+    padding-top: 25.375rem;
   }
 
-  .first__top {
-    padding-top: 25.375rem;
+  .first__container h1 {
+    margin-bottom: 1.25rem;
   }
 
   .first__present {
@@ -5344,7 +5340,6 @@ button.swiper-pagination-bullet {
   }
 
   .first__bg {
-    z-index: 4;
     max-height: 39.1875rem;
   }
 
@@ -5359,14 +5354,6 @@ button.swiper-pagination-bullet {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
     z-index: 2;
     pointer-events: none;
-  }
-
-  .first__desk--bg {
-    display: none;
-  }
-
-  .first__mob--bg {
-    display: block;
   }
 
   .first__shadow--left {
@@ -6397,6 +6384,18 @@ button.swiper-pagination-bullet {
     }
 }
 
+@supports (padding-top: clamp( 25.375rem , 19.9388945233rem  +  27.1805273834vw , 42.125rem )) {
+    .first__container {
+      padding-top: clamp( 25.375rem , 19.9388945233rem  +  27.1805273834vw , 42.125rem );
+    }
+}
+
+@supports not (padding-top: clamp( 25.375rem , 19.9388945233rem  +  27.1805273834vw , 42.125rem )) {
+    .first__container {
+      padding-top: calc(25.375rem + 16.75 * (100vw - 20rem) / 61.625);
+    }
+}
+
 @supports (margin-bottom: clamp( 1.25rem , 0.6414807302rem  +  3.0425963489vw , 3.125rem )) {
     .first__container h1 {
       margin-bottom: clamp( 1.25rem , 0.6414807302rem  +  3.0425963489vw , 3.125rem );
@@ -6406,18 +6405,6 @@ button.swiper-pagination-bullet {
 @supports not (margin-bottom: clamp( 1.25rem , 0.6414807302rem  +  3.0425963489vw , 3.125rem )) {
     .first__container h1 {
       margin-bottom: calc(1.25rem + 1.875 * (100vw - 20rem) / 61.625);
-    }
-}
-
-@supports (padding-top: clamp( 25.375rem , 19.9388945233rem  +  27.1805273834vw , 42.125rem )) {
-    .first__top {
-      padding-top: clamp( 25.375rem , 19.9388945233rem  +  27.1805273834vw , 42.125rem );
-    }
-}
-
-@supports not (padding-top: clamp( 25.375rem , 19.9388945233rem  +  27.1805273834vw , 42.125rem )) {
-    .first__top {
-      padding-top: calc(25.375rem + 16.75 * (100vw - 20rem) / 61.625);
     }
 }
 
