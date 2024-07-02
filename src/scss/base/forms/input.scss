@@ -1,0 +1,41 @@
+//<INPUT>
+// Снипет (HTML): inp
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.input {
+	border-radius: 0 !important;
+	width: 100%;
+	display: block;
+	padding: 0px 20px;
+	border: 1px solid #eee;
+
+	&._form-focus {}
+
+	&._form-error {}
+}
+
+textarea.input {
+	resize: none;
+	padding: 0px 0px;
+}
+
+//Кнопка "відправити" для Contact Form 7 WordPress, де "contacts" - батьківський клас форми
+.contacts button.btn,
+.contacts input[type="submit"].btn {
+	border-color: #000;
+	color: #fff;
+	display: block;
+	margin: 0 auto;
+}
+
+.contacts button.btn:hover,
+.contacts input[type="submit"].btn:hover {
+	border-color: red;
+}

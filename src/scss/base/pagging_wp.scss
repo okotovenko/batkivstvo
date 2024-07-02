@@ -1,0 +1,23 @@
+// Дeкоративні стилі для стандартної пагінації WordPress
+.navigation.pagination {
+	text-align: center;
+}
+
+.page-numbers {
+	cursor: pointer;
+	padding: 15px;
+	font-size: 16px;
+	border: none;
+	background-color: var(--text-accent);
+	color: var(--text-light);
+	text-decoration: none;
+}
+
+.page-numbers.current,
+.page-numbers:hover {
+	opacity: 0.8;
+}
+
+.page-numbers.prev,
+.page-numbers.next,
+.page-numbers.dots {}

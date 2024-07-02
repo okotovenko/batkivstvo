@@ -1,0 +1,374 @@
+// <SELECT>
+// Снипет (HTML): sel
+.form-label.form-label--1 {
+	.select {
+		position: relative;
+
+		// .select__body
+		&__body {
+			position: relative;
+			min-height: rem(28);
+		}
+
+		&_form {
+			height: 100%;
+		}
+
+		// .select__title
+		&__title {
+			text-align: left;
+			background-color: #fff;
+			cursor: pointer;
+			width: 100%;
+			font-weight: 400;
+			@include adaptiveValue("font-size", 20, 18);
+			line-height: 120%;
+			color: #05357a !important;
+			// height: fit-content !important;
+			height: 100%;
+		}
+
+		&__content {
+			font-weight: 400;
+			@include adaptiveValue("font-size", 20, 18);
+			line-height: 120%;
+			color: #05357a !important;
+			height: 100%;
+		}
+
+		// .select__value
+		&__value {
+			display: flex;
+			align-items: center;
+			height: 100%;
+			padding: 0;
+
+			>* {
+				flex: 1 1 auto;
+			}
+
+			&:after {
+				font-family: icons;
+				content: "\e900";
+				align-self: flex-start;
+				flex: 0 0 28px;
+				transition: all 0.3s ease 0s;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border: 2px solid #f26241;
+				background-color: $colorBackground;
+				color: #f26241;
+				transform: rotate(90deg);
+				border-radius: 50%;
+			}
+
+			&._select-pseudo-label {
+				&::before {
+					content: attr(data-pseudo-label);
+					opacity: 0.5;
+				}
+			}
+		}
+
+		// .select__text
+		&__text {
+			flex: 1 1 auto;
+		}
+
+		&__input {
+			width: 100%;
+			background-color: transparent;
+			height: 100%;
+		}
+
+		// .select__options
+		&__options {
+			font-weight: 400;
+			@include adaptiveValue("font-size", 20, 18);
+			line-height: 120%;
+			color: #f26241;
+			// position: absolute;
+			// top: 29px;
+			border-radius: 0 0 4px 4px;
+			min-width: 100%;
+			left: 0;
+			background-color: #fff;
+			border-top: 0;
+			border-top: 0;
+			padding: 10px 0px 5px 0px;
+		}
+
+		// .select__scroll
+		&__scroll {
+			overflow-y: auto;
+			overflow-x: hidden;
+			// Максимальная высота
+			max-height: 200px;
+
+			// Стили скроллбара
+			.simplebar-scrollbar {
+				&::before {
+					//opacity: 1;
+				}
+			}
+		}
+
+		// .select__option
+		&__option {
+			width: 100%;
+			text-align: left;
+			cursor: pointer;
+			padding: 5px 15px;
+			color: inherit;
+			position: relative;
+			padding-left: rem(57);
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: rem(26);
+				top: rem(9);
+				width: rem(18);
+				height: rem(18);
+				border-radius: 50%;
+				border: 2px solid #f26241;
+				background: $colorBackground;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			&._select-selected {
+
+				&::before {
+					font-family: icons;
+					content: '\e901';
+					background: #f26241;
+					color: $colorBackground;
+					font-size: rem(10);
+
+				}
+			}
+
+			@media (any-hover: hover) {
+				&:hover {
+					background: #d9d9d9;
+				}
+			}
+		}
+
+		// Конструкция дополнительных данных
+		&__row {
+			display: inline-flex;
+			align-items: center;
+		}
+
+		&__asset {}
+
+		&__text {}
+
+		// Состояния селекта
+		&._select-open {
+			z-index: 5;
+		}
+
+		&._select-disabled {}
+
+		&._select-active {}
+
+		&._select-focus {}
+
+		&._select-multiple {}
+
+		&._select-checkbox {}
+
+		&._select-open {
+
+			::after {
+				transform: rotate(-90deg);
+				border: 2px solid #f26241;
+				background-color: #f26241;
+				color: $colorBackground;
+			}
+
+		}
+	}
+}
+
+
+.form-label.form-label--2 {
+	border-bottom: none !important;
+
+	.select {
+		position: relative;
+
+		// .select__body
+		&__body {
+			position: relative;
+			min-height: rem(28);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: rem(10);
+		}
+
+		&_form {
+			height: 100%;
+		}
+
+		// .select__title
+		&__title {
+			cursor: pointer;
+			border-radius: 30px;
+			width: rem(269);
+			height: rem(56);
+			box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+			background: #f26241;
+			color: $colorBackground;
+			font-weight: 400;
+			font-size: 20px;
+			line-height: 120%;
+			text-align: center;
+			overflow: hidden;
+			margin: 0 auto;
+		}
+
+		&__content {
+			font-weight: 400;
+			@include adaptiveValue("font-size", 20, 18);
+			line-height: 120%;
+			color: $colorBackground;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		// .select__value
+		&__value {
+			display: flex;
+			align-items: center;
+			height: 100%;
+			padding: 0;
+
+			>* {
+				flex: 1 1 auto;
+			}
+
+			&._select-pseudo-label {
+				&::before {
+					content: attr(data-pseudo-label);
+					opacity: 0.5;
+				}
+			}
+		}
+
+		// .select__text
+		&__text {
+			flex: 1 1 auto;
+		}
+
+		&__input {
+			width: 100%;
+			background-color: transparent;
+			height: 100%;
+		}
+
+		// .select__options
+		&__options {
+			font-weight: 400;
+			@include adaptiveValue("font-size", 20, 18);
+			line-height: 120%;
+			color: #f26241;
+			// position: absolute;
+			// top: 29px;
+			border-radius: 30px;
+			box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+			width: 100%;
+			max-width: rem(270);
+			background-color: #fff;
+			border-top: 0;
+			border: 1px solid #d9d9d9;
+			border-top: 0;
+			padding: 24px 0px 18px 0px;
+		}
+
+		// .select__scroll
+		&__scroll {
+			overflow-y: auto;
+			overflow-x: hidden;
+			// Максимальная высота
+			max-height: 200px;
+
+			// Стили скроллбара
+			.simplebar-scrollbar {
+				&::before {
+					//opacity: 1;
+				}
+			}
+		}
+
+		// .select__option
+		&__option {
+			width: 100%;
+			text-align: left;
+			cursor: pointer;
+			padding: 10px 15px;
+			color: inherit;
+			position: relative;
+			padding-left: rem(38);
+
+			&::before {
+				display: none;
+			}
+
+			&._select-selected {}
+
+			@media (any-hover: hover) {
+				&:hover {
+					background: #d9d9d9;
+				}
+			}
+		}
+
+		// Конструкция дополнительных данных
+		&__row {
+			display: inline-flex;
+			align-items: center;
+		}
+
+		&__asset {}
+
+		&__text {}
+
+		// Состояния селекта
+		&._select-open {
+			z-index: 5;
+		}
+
+		&._select-disabled {}
+
+		&._select-active {}
+
+		&._select-focus {}
+
+		&._select-multiple {}
+
+		&._select-checkbox {}
+
+		&._select-open {}
+
+		.simplebar-content {
+			&::after {
+				display: none;
+			}
+		}
+	}
+}
+
+// Тег
+._select-tag {
+	cursor: pointer;
+}
