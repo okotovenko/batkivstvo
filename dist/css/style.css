@@ -1517,6 +1517,7 @@ h4 {
   max-width: 83.3125rem;
   margin: 0 auto;
   z-index: -1;
+  background: red;
 }
 
 .first__bg > img,
