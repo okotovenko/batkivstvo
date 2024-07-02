@@ -1507,11 +1507,6 @@ h4 {
 }
 
 .first__bg {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  margin: 0 auto;
   width: 100%;
   height: 100%;
   max-width: 83.3125rem;
@@ -4685,6 +4680,10 @@ button.swiper-pagination-bullet {
     height: 3.5rem;
   }
 
+  .first__container {
+    padding-top: 42.125rem;
+  }
+
   .first__container h1 {
     margin-bottom: 3.125rem;
   }
@@ -5023,6 +5022,10 @@ button.swiper-pagination-bullet {
 
   .icon-menu span {
     height: 2.5rem;
+  }
+
+  .first__container {
+    padding-top: 25.375rem;
   }
 
   .first__container h1 {
@@ -6373,6 +6376,18 @@ button.swiper-pagination-bullet {
 @supports not (height: clamp( 2.5rem , 2.1754563895rem  +  1.6227180527vw , 3.5rem )) {
     .icon-menu span {
       height: calc(2.5rem + 1 * (100vw - 20rem) / 61.625);
+    }
+}
+
+@supports (padding-top: clamp( 25.375rem , 19.9388945233rem  +  27.1805273834vw , 42.125rem )) {
+    .first__container {
+      padding-top: clamp( 25.375rem , 19.9388945233rem  +  27.1805273834vw , 42.125rem );
+    }
+}
+
+@supports not (padding-top: clamp( 25.375rem , 19.9388945233rem  +  27.1805273834vw , 42.125rem )) {
+    .first__container {
+      padding-top: calc(25.375rem + 16.75 * (100vw - 20rem) / 61.625);
     }
 }
 
