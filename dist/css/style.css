@@ -4869,6 +4869,20 @@ button.swiper-pagination-bullet {
   }
 }
 
+@media (max-width: 25em) {
+  .first__present--left p {
+    font-size: 1.875rem;
+  }
+
+  .first__present--left span {
+    font-size: 1.875rem;
+  }
+
+  .first__present--right p {
+    font-size: 1.875rem;
+  }
+}
+
 @media (max-width: 20em) {
   .form-label.form-label--1 .select__title {
     font-size: 1.125rem;
@@ -5230,13 +5244,13 @@ button.swiper-pagination-bullet {
   }
 
   .number-opacity--6 {
-    left: 30%;
+    left: 58%;
     top: 160%;
   }
 
   .number-opacity--8 {
-    left: 30%;
-    top: 240%;
+    left: 43%;
+    top: 230%;
   }
 
   .number-opacity--2-2 {
@@ -5296,7 +5310,7 @@ button.swiper-pagination-bullet {
 
   .number-opacity--5-5 {
     left: 85%;
-    top: 138%;
+    top: 153%;
   }
 
   .menu__list {
