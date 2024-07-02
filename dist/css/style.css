@@ -194,6 +194,8 @@ body {
   line-height: 120%;
   color: #05357a !important;
   height: 100%;
+  width: 100%;
+  max-width: 17.5rem;
 }
 
 .form-label.form-label--1 .select__value {
@@ -203,6 +205,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   height: 100%;
   padding: 0;
 }
@@ -218,9 +223,8 @@ body {
   content: "\e900";
   -ms-flex-item-align: start;
       align-self: flex-start;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 28px;
-          flex: 0 0 28px;
+  width: 28px !important;
+  height: 28px;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   display: -webkit-box;
@@ -1052,7 +1056,7 @@ body::after {
 }
 
 .menu__list {
-  height: calc(100vh - 132px);
+  height: calc(100vh - 151px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1535,7 +1539,7 @@ h4 {
      object-position: top;
 }
 
-.first__bg .bg-mob {
+.first__mob--bg {
   display: none;
 }
 
@@ -4953,7 +4957,7 @@ button.swiper-pagination-bullet {
   }
 
   .menu__body {
-    padding-bottom: 4.375rem;
+    padding-bottom: 6.25rem;
   }
 
   .menu ul {
@@ -5275,8 +5279,8 @@ button.swiper-pagination-bullet {
   }
 
   .number-opacity--4-6 {
-    left: 5%;
-    top: 720%;
+    left: -12%;
+    top: 830%;
   }
 
   .number-opacity--5-2 {
@@ -5340,7 +5344,7 @@ button.swiper-pagination-bullet {
   }
 
   .first__bg {
-    z-index: 1;
+    z-index: 2;
     max-height: 39.1875rem;
   }
 
@@ -5357,11 +5361,11 @@ button.swiper-pagination-bullet {
     pointer-events: none;
   }
 
-  .first__bg .bg {
+  .first__desk--bg {
     display: none;
   }
 
-  .first__bg .bg-mob {
+  .first__mob--bg {
     display: block;
   }
 
@@ -6163,15 +6167,15 @@ button.swiper-pagination-bullet {
     }
 }
 
-@supports (padding-bottom: clamp( 4.375rem , 3.1173935091rem  +  6.2880324544vw , 8.25rem )) {
+@supports (padding-bottom: clamp( 6.25rem , 5.6009127789rem  +  3.2454361055vw , 8.25rem )) {
     .menu__body {
-      padding-bottom: clamp( 4.375rem , 3.1173935091rem  +  6.2880324544vw , 8.25rem );
+      padding-bottom: clamp( 6.25rem , 5.6009127789rem  +  3.2454361055vw , 8.25rem );
     }
 }
 
-@supports not (padding-bottom: clamp( 4.375rem , 3.1173935091rem  +  6.2880324544vw , 8.25rem )) {
+@supports not (padding-bottom: clamp( 6.25rem , 5.6009127789rem  +  3.2454361055vw , 8.25rem )) {
     .menu__body {
-      padding-bottom: calc(4.375rem + 3.875 * (100vw - 20rem) / 61.625);
+      padding-bottom: calc(6.25rem + 2 * (100vw - 20rem) / 61.625);
     }
 }
 
