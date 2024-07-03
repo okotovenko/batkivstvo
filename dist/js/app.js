@@ -474,6 +474,57 @@
                     return;
                 }
             }.bind(this));
+            document.addEventListener("touchstart", function(e) {
+                const buttonOpen = e.target.closest(`[${this.options.attributeOpenButton}]`);
+                if (buttonOpen) {
+                    this._dataValue = buttonOpen.getAttribute(this.options.attributeOpenButton) ? buttonOpen.getAttribute(this.options.attributeOpenButton) : "error";
+                    this.youTubeCode = buttonOpen.getAttribute(this.options.youtubeAttribute) ? buttonOpen.getAttribute(this.options.youtubeAttribute) : null;
+                    if (this._dataValue !== "error") {
+                        if (!this.isOpen) this.lastFocusEl = buttonOpen;
+                        this.targetOpen.selector = `${this._dataValue}`;
+                        this._selectorOpen = true;
+                        this.open();
+                        return;
+                    } else this.popupLogging(`Ой ой, не заполнен атрибут у ${buttonOpen.classList}`);
+                    return;
+                }
+                const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
+                if (buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen) {
+                    e.preventDefault();
+                    this.close();
+                    let buttons = document.querySelectorAll(".toggle");
+                    buttons.forEach((element => {
+                        if (element.classList.contains("active")) element.classList.remove("active");
+                    }));
+                    return;
+                }
+            }.bind(this));
+            document.addEventListener("touchend", function(e) {
+                const buttonOpen = e.target.closest(`[${this.options.attributeOpenButton}]`);
+                if (buttonOpen) {
+                    e.preventDefault();
+                    this._dataValue = buttonOpen.getAttribute(this.options.attributeOpenButton) ? buttonOpen.getAttribute(this.options.attributeOpenButton) : "error";
+                    this.youTubeCode = buttonOpen.getAttribute(this.options.youtubeAttribute) ? buttonOpen.getAttribute(this.options.youtubeAttribute) : null;
+                    if (this._dataValue !== "error") {
+                        if (!this.isOpen) this.lastFocusEl = buttonOpen;
+                        this.targetOpen.selector = `${this._dataValue}`;
+                        this._selectorOpen = true;
+                        this.open();
+                        return;
+                    } else this.popupLogging(`Ой ой, не заполнен атрибут у ${buttonOpen.classList}`);
+                    return;
+                }
+                const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
+                if (buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen) {
+                    e.preventDefault();
+                    this.close();
+                    let buttons = document.querySelectorAll(".toggle");
+                    buttons.forEach((element => {
+                        if (element.classList.contains("active")) element.classList.remove("active");
+                    }));
+                    return;
+                }
+            }.bind(this));
             document.addEventListener("keydown", function(e) {
                 if (this.options.closeEsc && e.which == 27 && e.code === "Escape" && this.isOpen) {
                     e.preventDefault();
@@ -8016,7 +8067,6 @@
             slidesPerView: 3,
             spaceBetween: 0,
             speed: 800,
-            autoplay: true,
             loop: true,
             on: {}
         });
@@ -9170,10 +9220,50 @@
     }
     function toggleButton() {
         let buttons = document.querySelectorAll(".toggle");
+        let startX, startY, endX, endY, isMouseDown = false;
         buttons.forEach((element => {
             element.addEventListener("click", (function() {
                 element.classList.toggle("active");
             }));
+            const leftElement = element.querySelector(".toggle__left");
+            leftElement.addEventListener("touchstart", (function(e) {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+            }));
+            leftElement.addEventListener("touchmove", (function(e) {
+                endX = e.touches[0].clientX;
+                endY = e.touches[0].clientY;
+            }));
+            leftElement.addEventListener("touchend", (function() {
+                handleSwipe(element);
+            }));
+            leftElement.addEventListener("mousedown", (function(e) {
+                isMouseDown = true;
+                startX = e.clientX;
+                startY = e.clientY;
+            }));
+            document.addEventListener("mousemove", (function(e) {
+                if (isMouseDown) {
+                    endX = e.clientX;
+                    endY = e.clientY;
+                }
+            }));
+            document.addEventListener("mouseup", (function() {
+                if (isMouseDown) {
+                    isMouseDown = false;
+                    handleSwipe(element);
+                }
+            }));
+            function handleSwipe(element) {
+                if (!startX || !startY || !endX || !endY) return;
+                const deltaX = endX - startX;
+                const deltaY = endY - startY;
+                if (Math.abs(deltaX) > Math.abs(deltaY)) if (deltaX > 50) element.classList.add("active"); else if (deltaX < -50) element.classList.remove("active");
+                startX = null;
+                startY = null;
+                endX = null;
+                endY = null;
+            }
         }));
     }
     window["FLS"] = true;

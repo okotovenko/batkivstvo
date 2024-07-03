@@ -346,6 +346,19 @@ body {
   border-bottom: none !important;
 }
 
+.form-label.form-label--2 .spollers__title {
+  font-weight: 400;
+  line-height: 120%;
+  color: #05357a !important;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .form-label.form-label--2 .select {
   position: relative;
 }
@@ -704,6 +717,13 @@ body::after {
   padding: 20px;
   width: 100%;
   border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .lock .popup__content {
@@ -714,6 +734,10 @@ body::after {
   width: 1.25rem;
   height: 1.25rem;
   border: none !important;
+  position: relative;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-bottom: 1.25rem;
 }
 
 .popup__close::before,
@@ -728,16 +752,16 @@ body::after {
 }
 
 .popup__close::before {
-  right: 30px;
-  top: 15px;
+  right: 9px;
+  top: 0;
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
 .popup__close::after {
-  right: 30px;
-  top: 15px;
+  right: 9px;
+  top: 0;
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
@@ -2286,7 +2310,7 @@ h4 {
   z-index: 4;
 }
 
-.tabs__navigation {
+.third .tabs__navigation {
   width: 100%;
   -ms-flex-item-align: end;
       align-self: flex-end;
@@ -2306,7 +2330,7 @@ h4 {
   padding-bottom: 3.125rem;
 }
 
-.tabs__title {
+.third .tabs__title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2326,29 +2350,30 @@ h4 {
       -ms-grid-row-align: stretch;
       align-self: stretch;
   position: relative;
+  padding-bottom: 3.125rem;
 }
 
-.tabs__title > img,
-.tabs__title > picture {
+.third .tabs__title > img,
+.third .tabs__title > picture {
   width: 6.25rem;
   height: 6.25rem;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-.tabs__title picture source,
-.tabs__title picture img {
+.third .tabs__title picture source,
+.third .tabs__title picture img {
   width: 6.25rem;
   height: 6.25rem;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-.tabs__title::before {
+.third .tabs__title::before {
   font-family: icons;
   content: "\e900";
   position: absolute;
-  bottom: -3.125rem;
+  bottom: 0rem;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -2373,7 +2398,7 @@ h4 {
   border-radius: 50%;
 }
 
-.tabs__title._tab-active::before {
+.third .tabs__title._tab-active::before {
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
           transform: rotate(-90deg);
@@ -2381,7 +2406,7 @@ h4 {
   color: #ffffff;
 }
 
-.tabs__body {
+.third .tabs__body {
   width: 100%;
   top: 100%;
   font-style: italic;
@@ -2394,7 +2419,7 @@ h4 {
   z-index: 3;
 }
 
-.tabs__body::before {
+.third .tabs__body::before {
   content: "";
   position: absolute;
   left: 0;
@@ -2407,7 +2432,7 @@ h4 {
   pointer-events: none;
 }
 
-.tabs__body::after {
+.third .tabs__body::after {
   content: "";
   position: absolute;
   left: 0;
@@ -2420,7 +2445,7 @@ h4 {
   pointer-events: none;
 }
 
-.tabs__content {
+.third .tabs__content {
   width: 100%;
   max-width: 63.125rem;
 }
@@ -2563,9 +2588,9 @@ h4 {
   content: "";
   position: absolute;
   right: 0%;
-  bottom: -360%;
-  width: 38.75rem;
-  height: 38.75rem;
+  bottom: -280%;
+  width: 32.5rem;
+  height: 32.5rem;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 49%, rgba(255, 255, 255, 0.1) 100%);
   z-index: -1;
@@ -4538,6 +4563,10 @@ button.swiper-pagination-bullet {
     font-size: 1.25rem;
   }
 
+  .form-label.form-label--2 .spollers__title {
+    font-size: 1.25rem;
+  }
+
   .form-label.form-label--2 .select__content {
     font-size: 1.25rem;
   }
@@ -4727,7 +4756,7 @@ button.swiper-pagination-bullet {
 
   .second__slide p,
   .second__slide span {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 
   .third {
@@ -4742,7 +4771,7 @@ button.swiper-pagination-bullet {
     gap: 1.25rem;
   }
 
-  .tabs__title {
+  .third .tabs__title {
     gap: 2.125rem;
   }
 
@@ -4858,7 +4887,7 @@ button.swiper-pagination-bullet {
     font-size: 2.5rem;
   }
 
-  .tabs__navigation {
+  .third .tabs__navigation {
     -webkit-column-gap: 7.5rem;
        -moz-column-gap: 7.5rem;
             column-gap: 7.5rem;
@@ -4893,6 +4922,10 @@ button.swiper-pagination-bullet {
   }
 
   .form-label.form-label--1 .select__options {
+    font-size: 1.125rem;
+  }
+
+  .form-label.form-label--2 .spollers__title {
     font-size: 1.125rem;
   }
 
@@ -5080,12 +5113,12 @@ button.swiper-pagination-bullet {
   }
 
   .second__slide h5 {
-    font-size: 0.875rem;
+    font-size: 0.625rem;
   }
 
   .second__slide p,
   .second__slide span {
-    font-size: 0.625rem;
+    font-size: 0.5rem;
   }
 
   .third {
@@ -5100,7 +5133,7 @@ button.swiper-pagination-bullet {
     gap: 0.75rem;
   }
 
-  .tabs__title {
+  .third .tabs__title {
     gap: 1.25rem;
   }
 
@@ -5434,17 +5467,31 @@ button.swiper-pagination-bullet {
     max-width: 14.6875rem;
     -ms-flex-item-align: end;
         align-self: flex-end;
+    z-index: 4;
   }
 
   .first__bottom h4::before {
     content: "";
     position: absolute;
-    right: -35%;
-    top: -100%;
-    width: 20rem;
-    height: 20rem;
+    right: -10%;
+    top: -50%;
+    width: 13.75rem;
+    height: 13.75rem;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 49%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .first__bottom h4::after {
+    content: "";
+    position: absolute;
+    right: -30%;
+    top: -50%;
+    width: 12.5rem;
+    height: 12.5rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 49%, rgba(255, 255, 255, 0.1) 49%);
     z-index: -1;
     pointer-events: none;
   }
@@ -5475,6 +5522,7 @@ button.swiper-pagination-bullet {
         -ms-flex: 0 1 auto;
             flex: 0 1 auto;
     width: 100%;
+    z-index: 3;
   }
 
   .first__present::after {
@@ -5508,6 +5556,7 @@ button.swiper-pagination-bullet {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
+    padding-bottom: 0.625rem;
   }
 
   .first__present--left p {
@@ -5522,7 +5571,7 @@ button.swiper-pagination-bullet {
 
   .first__present--right p {
     text-align: left;
-    padding-left: 1.875rem;
+    padding-left: 1.6875rem;
   }
 
   .second__decor {
@@ -5553,6 +5602,7 @@ button.swiper-pagination-bullet {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
+    padding-bottom: 0.3125rem;
   }
 
   .second__present--left p {
@@ -5565,7 +5615,7 @@ button.swiper-pagination-bullet {
 
   .second__present--right p {
     text-align: right;
-    padding-right: 1.875rem;
+    padding-right: 2.375rem;
   }
 
   .second__title > h4 {
@@ -5578,13 +5628,17 @@ button.swiper-pagination-bullet {
     display: none;
   }
 
+  .second {
+    margin-bottom: 2.1875rem;
+  }
+
   .swiper {
     width: 110%;
     -webkit-transform: translateX(-5%);
         -ms-transform: translateX(-5%);
             transform: translateX(-5%);
     padding-top: 8.125rem !important;
-    padding-bottom: 8.125rem !important;
+    padding-bottom: 6.25rem !important;
   }
 
   .swiper-slide {
@@ -5636,22 +5690,22 @@ button.swiper-pagination-bullet {
             justify-content: center;
   }
 
-  .tabs__navigation {
+  .third .tabs__navigation {
     padding-bottom: 0;
   }
 
-  .tabs__body {
+  .third .tabs__body {
     font-size: 1rem;
     text-align: right;
-    padding-top: 3.125rem;
+    padding-top: 0.625rem;
   }
 
-  .tabs__body::before,
-  .tabs__body::after {
+  .third .tabs__body::before,
+  .third .tabs__body::after {
     display: none;
   }
 
-  .tabs__content {
+  .third .tabs__content {
     row-gap: 0.625rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -5662,29 +5716,29 @@ button.swiper-pagination-bullet {
             flex-direction: column;
   }
 
-  .tabs__content :nth-child(4n-3).tabs__title {
+  .third .tabs__content :nth-child(4n-3).tabs__title {
     -ms-flex-item-align: start;
         align-self: flex-start;
     margin-left: 10%;
   }
 
-  .tabs__content :nth-child(4n+2).tabs__body {
+  .third .tabs__content :nth-child(4n+2).tabs__body {
     text-align: left;
     padding-bottom: 3.125rem;
   }
 
-  .tabs__content :nth-child(4n+3).tabs__title {
+  .third .tabs__content :nth-child(4n+3).tabs__title {
     -ms-flex-item-align: end;
         align-self: flex-end;
     margin-right: 10%;
     margin-top: -50px;
   }
 
-  .tabs__content :nth-child(3).tabs__title {
+  .third .tabs__content :nth-child(3).tabs__title {
     margin-right: 13%;
   }
 
-  .tabs__content :nth-child(5).tabs__title {
+  .third .tabs__content :nth-child(5).tabs__title {
     margin-left: 14%;
   }
 
@@ -5792,6 +5846,10 @@ button.swiper-pagination-bullet {
 
   .four__box {
     max-width: 100%;
+  }
+
+  .four__box .first__present--right p {
+    padding-left: 2.375rem;
   }
 
   .four__img {
@@ -5990,6 +6048,18 @@ button.swiper-pagination-bullet {
 
 @supports not (font-size: clamp( 1.125rem , 1.0844320487rem  +  0.2028397566vw , 1.25rem )) {
     .form-label.form-label--1 .select__options {
+      font-size: calc(1.125rem + 0.125 * (100vw - 20rem) / 61.625);
+    }
+}
+
+@supports (font-size: clamp( 1.125rem , 1.0844320487rem  +  0.2028397566vw , 1.25rem )) {
+    .form-label.form-label--2 .spollers__title {
+      font-size: clamp( 1.125rem , 1.0844320487rem  +  0.2028397566vw , 1.25rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.125rem , 1.0844320487rem  +  0.2028397566vw , 1.25rem )) {
+    .form-label.form-label--2 .spollers__title {
       font-size: calc(1.125rem + 0.125 * (100vw - 20rem) / 61.625);
     }
 }
@@ -6516,29 +6586,29 @@ button.swiper-pagination-bullet {
     }
 }
 
-@supports (font-size: clamp( 0.875rem , 0.6721602434rem  +  1.014198783vw , 1.5rem )) {
+@supports (font-size: clamp( 0.625rem , 0.3410243408rem  +  1.4198782961vw , 1.5rem )) {
     .second__slide h5 {
-      font-size: clamp( 0.875rem , 0.6721602434rem  +  1.014198783vw , 1.5rem );
+      font-size: clamp( 0.625rem , 0.3410243408rem  +  1.4198782961vw , 1.5rem );
     }
 }
 
-@supports not (font-size: clamp( 0.875rem , 0.6721602434rem  +  1.014198783vw , 1.5rem )) {
+@supports not (font-size: clamp( 0.625rem , 0.3410243408rem  +  1.4198782961vw , 1.5rem )) {
     .second__slide h5 {
-      font-size: calc(0.875rem + 0.625 * (100vw - 20rem) / 61.625);
+      font-size: calc(0.625rem + 0.875 * (100vw - 20rem) / 61.625);
     }
 }
 
-@supports (font-size: clamp( 0.625rem , 0.503296146rem  +  0.6085192698vw , 1rem )) {
+@supports (font-size: clamp( 0.5rem , 0.378296146rem  +  0.6085192698vw , 0.875rem )) {
     .second__slide p,
     .second__slide span {
-      font-size: clamp( 0.625rem , 0.503296146rem  +  0.6085192698vw , 1rem );
+      font-size: clamp( 0.5rem , 0.378296146rem  +  0.6085192698vw , 0.875rem );
     }
 }
 
-@supports not (font-size: clamp( 0.625rem , 0.503296146rem  +  0.6085192698vw , 1rem )) {
+@supports not (font-size: clamp( 0.5rem , 0.378296146rem  +  0.6085192698vw , 0.875rem )) {
     .second__slide p,
     .second__slide span {
-      font-size: calc(0.625rem + 0.375 * (100vw - 20rem) / 61.625);
+      font-size: calc(0.5rem + 0.375 * (100vw - 20rem) / 61.625);
     }
 }
 
@@ -6579,13 +6649,13 @@ button.swiper-pagination-bullet {
 }
 
 @supports (gap: clamp( 1.25rem , 0.9660243408rem  +  1.4198782961vw , 2.125rem )) {
-    .tabs__title {
+    .third .tabs__title {
       gap: clamp( 1.25rem , 0.9660243408rem  +  1.4198782961vw , 2.125rem );
     }
 }
 
 @supports not (gap: clamp( 1.25rem , 0.9660243408rem  +  1.4198782961vw , 2.125rem )) {
-    .tabs__title {
+    .third .tabs__title {
       gap: calc(1.25rem + 0.875 * (100vw - 20rem) / 61.625);
     }
 }
@@ -6907,7 +6977,7 @@ button.swiper-pagination-bullet {
 
 @media (min-width: 48.06125em) and (max-width: 94.5em) {
 @supports ((-moz-column-gap: clamp( 4.375rem , 1.1408172055rem  +  6.7292939625vw , 7.5rem )) or (column-gap: clamp( 4.375rem , 1.1408172055rem  +  6.7292939625vw , 7.5rem ))) {
-    .tabs__navigation {
+    .third .tabs__navigation {
       -webkit-column-gap: clamp( 4.375rem , 1.1408172055rem  +  6.7292939625vw , 7.5rem );
          -moz-column-gap: clamp( 4.375rem , 1.1408172055rem  +  6.7292939625vw , 7.5rem );
               column-gap: clamp( 4.375rem , 1.1408172055rem  +  6.7292939625vw , 7.5rem );
@@ -6915,7 +6985,7 @@ button.swiper-pagination-bullet {
 }
 
 @supports not ((-moz-column-gap: clamp( 4.375rem , 1.1408172055rem  +  6.7292939625vw , 7.5rem )) or (column-gap: clamp( 4.375rem , 1.1408172055rem  +  6.7292939625vw , 7.5rem ))) {
-    .tabs__navigation {
+    .third .tabs__navigation {
       -webkit-column-gap: calc(4.375rem + 3.125 * (100vw - 48.06125rem) / 46.43875);
          -moz-column-gap: calc(4.375rem + 3.125 * (100vw - 48.06125rem) / 46.43875);
               column-gap: calc(4.375rem + 3.125 * (100vw - 48.06125rem) / 46.43875);
