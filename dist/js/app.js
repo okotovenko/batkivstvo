@@ -448,58 +448,63 @@
             this.eventsPopup();
         }
         eventsPopup() {
+            const toggles = document.querySelectorAll(".toggle");
+            toggles.forEach((toggle => {
+                const toggleLeft = toggle.querySelector(".toggle__left");
+                const toggleWidth = toggle.offsetWidth;
+                const toggleLeftWidth = toggleLeft.offsetWidth;
+                const maxMoveX = toggleWidth - toggleLeftWidth;
+                let startX, currentX, isDragging = false;
+                let popup = document.querySelector(".popup");
+                toggleLeft.addEventListener("touchstart", (function(e) {
+                    startX = e.touches[0].clientX;
+                    isDragging = true;
+                    toggleLeft.style.transition = "none";
+                }));
+                toggleLeft.addEventListener("touchmove", (function(e) {
+                    if (!isDragging) return;
+                    currentX = e.touches[0].clientX;
+                    let moveX = currentX - startX;
+                    if (moveX >= 0 && moveX <= maxMoveX) toggleLeft.style.transform = `translateX(${moveX}px)`;
+                }));
+                toggleLeft.addEventListener("touchend", (function(e) {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    toggleLeft.style.transition = "transform 0.3s ease";
+                    if (!toggle.classList.contains(".active")) if (currentX - startX > maxMoveX / 2) {
+                        toggleLeft.style.transform = `translateX(${maxMoveX}px)`;
+                        toggleLeft.classList.add("moved");
+                        popup.setAttribute("aria-hidden", "false");
+                        popup.classList.add("popup_show");
+                        document.documentElement.classList.add("popup-show", "lock");
+                    } else {
+                        toggleLeft.style.transform = `translateX(0px)`;
+                        toggleLeft.classList.remove("moved");
+                        popup.setAttribute("aria-hidden", "true");
+                        popup.classList.remove("popup_show");
+                        document.documentElement.classList.remove("popup-show", "lock");
+                    }
+                }));
+                document.addEventListener("click", function(e) {
+                    if (document.documentElement.classList.contains("popup-show", "lock")) {
+                        e.preventDefault();
+                        console.log(toggleLeft);
+                        toggleLeft.style.transform = `translateX(0px)`;
+                        toggleLeft.classList.remove("moved");
+                        popup.setAttribute("aria-hidden", "true");
+                        popup.classList.remove("popup_show");
+                        document.documentElement.classList.remove("popup-show", "lock");
+                    }
+                }.bind(this));
+            }));
             document.addEventListener("click", function(e) {
-                const buttonOpen = e.target.closest(`[${this.options.attributeOpenButton}]`);
-                if (buttonOpen) {
-                    e.preventDefault();
-                    this._dataValue = buttonOpen.getAttribute(this.options.attributeOpenButton) ? buttonOpen.getAttribute(this.options.attributeOpenButton) : "error";
-                    this.youTubeCode = buttonOpen.getAttribute(this.options.youtubeAttribute) ? buttonOpen.getAttribute(this.options.youtubeAttribute) : null;
-                    if (this._dataValue !== "error") {
-                        if (!this.isOpen) this.lastFocusEl = buttonOpen;
-                        this.targetOpen.selector = `${this._dataValue}`;
-                        this._selectorOpen = true;
-                        this.open();
-                        return;
-                    } else this.popupLogging(`Ой ой, не заполнен атрибут у ${buttonOpen.classList}`);
-                    return;
-                }
-                const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
-                if (buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen) {
-                    e.preventDefault();
-                    this.close();
-                    let buttons = document.querySelectorAll(".toggle");
-                    buttons.forEach((element => {
-                        if (element.classList.contains("active")) element.classList.remove("active");
-                    }));
-                    return;
-                }
-            }.bind(this));
-            document.addEventListener("touchstart", function(e) {
-                const buttonOpen = e.target.closest(`[${this.options.attributeOpenButton}]`);
-                if (buttonOpen) {
-                    this._dataValue = buttonOpen.getAttribute(this.options.attributeOpenButton) ? buttonOpen.getAttribute(this.options.attributeOpenButton) : "error";
-                    this.youTubeCode = buttonOpen.getAttribute(this.options.youtubeAttribute) ? buttonOpen.getAttribute(this.options.youtubeAttribute) : null;
-                    if (this._dataValue !== "error") {
-                        if (!this.isOpen) this.lastFocusEl = buttonOpen;
-                        this.targetOpen.selector = `${this._dataValue}`;
-                        this._selectorOpen = true;
-                        this.open();
-                        return;
-                    } else this.popupLogging(`Ой ой, не заполнен атрибут у ${buttonOpen.classList}`);
-                    return;
-                }
-                const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
-                if (buttonClose || !e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen) {
-                    e.preventDefault();
-                    this.close();
-                    let buttons = document.querySelectorAll(".toggle");
-                    buttons.forEach((element => {
-                        if (element.classList.contains("active")) element.classList.remove("active");
-                    }));
-                    return;
-                }
-            }.bind(this));
-            document.addEventListener("touchend", function(e) {
+                const toggleLeft = document.querySelectorAll(".toggle__left");
+                toggleLeft.forEach((element => {
+                    if (element.classList.contains("moved")) {
+                        element.classList.remove("moved");
+                        element.style.transform = `translateX(0px)`;
+                    }
+                }));
                 const buttonOpen = e.target.closest(`[${this.options.attributeOpenButton}]`);
                 if (buttonOpen) {
                     e.preventDefault();
@@ -529,10 +534,6 @@
                 if (this.options.closeEsc && e.which == 27 && e.code === "Escape" && this.isOpen) {
                     e.preventDefault();
                     this.close();
-                    let buttons = document.querySelectorAll(".toggle");
-                    buttons.forEach((element => {
-                        if (element.classList.contains("active")) element.classList.remove("active");
-                    }));
                     return;
                 }
                 if (this.options.focusCatch && e.which == 9 && this.isOpen) {
@@ -8067,6 +8068,7 @@
             slidesPerView: 3,
             spaceBetween: 0,
             speed: 800,
+            autoplay: true,
             loop: true,
             on: {}
         });
@@ -9220,52 +9222,14 @@
     }
     function toggleButton() {
         let buttons = document.querySelectorAll(".toggle");
-        let startX, startY, endX, endY, isMouseDown = false;
         buttons.forEach((element => {
             element.addEventListener("click", (function() {
                 element.classList.toggle("active");
             }));
-            const leftElement = element.querySelector(".toggle__left");
-            leftElement.addEventListener("touchstart", (function(e) {
-                startX = e.touches[0].clientX;
-                startY = e.touches[0].clientY;
-            }));
-            leftElement.addEventListener("touchmove", (function(e) {
-                endX = e.touches[0].clientX;
-                endY = e.touches[0].clientY;
-            }));
-            leftElement.addEventListener("touchend", (function() {
-                handleSwipe(element);
-            }));
-            leftElement.addEventListener("mousedown", (function(e) {
-                isMouseDown = true;
-                startX = e.clientX;
-                startY = e.clientY;
-            }));
-            document.addEventListener("mousemove", (function(e) {
-                if (isMouseDown) {
-                    endX = e.clientX;
-                    endY = e.clientY;
-                }
-            }));
-            document.addEventListener("mouseup", (function() {
-                if (isMouseDown) {
-                    isMouseDown = false;
-                    handleSwipe(element);
-                }
-            }));
-            function handleSwipe(element) {
-                if (!startX || !startY || !endX || !endY) return;
-                const deltaX = endX - startX;
-                const deltaY = endY - startY;
-                if (Math.abs(deltaX) > Math.abs(deltaY)) if (deltaX > 50) element.classList.add("active"); else if (deltaX < -50) element.classList.remove("active");
-                startX = null;
-                startY = null;
-                endX = null;
-                endY = null;
-            }
         }));
-    }
+        //!
+        //!
+        }
     window["FLS"] = true;
     isWebp();
     menuInit();

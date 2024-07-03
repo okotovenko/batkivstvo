@@ -414,9 +414,21 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  padding: 0rem 2.375rem;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  position: relative;
+}
+
+.form-label.form-label--2 .select__content::before {
+  content: "";
+  position: absolute;
+  right: 0.875rem;
+  top: 0.6875rem;
+  width: 28px;
+  height: 28px;
+  background: top/contain no-repeat url("../img/icons/clock.svg");
 }
 
 .form-label.form-label--2 .select__value {
@@ -966,27 +978,27 @@ body::after {
 }
 
 .number-opacity--2 {
-  left: -4%;
-  top: -55%;
+  left: 10%;
+  top: -70%;
 }
 
 .number-opacity--3 {
   left: -40%;
-  top: -27%;
+  top: -34%;
 }
 
 .number-opacity--4 {
-  left: -59%;
+  left: -70%;
   top: 81%;
 }
 
 .number-opacity--5 {
-  left: -43%;
-  top: 126%;
+  left: -27%;
+  top: 166%;
 }
 
 .number-opacity--6 {
-  left: -43%;
+  left: -28%;
   top: 92%;
 }
 
@@ -2054,6 +2066,7 @@ h4 {
   width: 100%;
   max-width: 28.75rem;
   position: relative;
+  z-index: 20;
 }
 
 .no-webp .second__title > h4::before{
@@ -2109,7 +2122,8 @@ h4 {
 }
 
 .second__slide p {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.625rem;
+  white-space: nowrap;
 }
 
 .second__slide h5,
@@ -2220,6 +2234,23 @@ h4 {
   color: #05357a;
   position: relative;
   z-index: 4;
+}
+
+.third__container h3 {
+  position: relative;
+}
+
+.third__container h3::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  top: -80%;
+  width: 100%;
+  height: 6.25rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), color-stop(49%, rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.3)));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.8) 49%, rgba(255, 255, 255, 0.3) 100%);
+  background-size: 20rem;
+  z-index: -1;
 }
 
 .third__top {
@@ -3007,6 +3038,10 @@ h4 {
 
 .five form label input {
   height: 100%;
+}
+
+.five form input {
+  text-align: center;
 }
 
 .five form input,
@@ -4756,7 +4791,7 @@ button.swiper-pagination-bullet {
 
   .second__slide p,
   .second__slide span {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
   }
 
   .third {
@@ -5287,8 +5322,8 @@ button.swiper-pagination-bullet {
   }
 
   .number-opacity--2-2 {
-    left: 94%;
-    top: 300%;
+    left: 101%;
+    top: 270%;
   }
 
   .number-opacity--3-1 {
@@ -5574,6 +5609,19 @@ button.swiper-pagination-bullet {
     padding-left: 1.6875rem;
   }
 
+  .second__container h3::before {
+    content: "";
+    position: absolute;
+    left: -10%;
+    top: -80%;
+    width: 100%;
+    height: 6.25rem;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), color-stop(49%, rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.3)));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.8) 49%, rgba(255, 255, 255, 0.3) 100%);
+    background-size: 20rem;
+    z-index: -1;
+  }
+
   .second__decor {
     display: none;
   }
@@ -5584,6 +5632,11 @@ button.swiper-pagination-bullet {
 
   .second__left::after {
     display: none;
+  }
+
+  .second__number {
+    position: relative;
+    z-index: 4;
   }
 
   .second__present > img,
@@ -5623,13 +5676,25 @@ button.swiper-pagination-bullet {
     text-align: left;
   }
 
-  .second__title > h4::before,
+  .second__title > h4::before {
+    content: "";
+    position: absolute;
+    left: -10%;
+    top: -60%;
+    width: 100%;
+    height: 10rem;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), color-stop(49%, rgb(255, 255, 255)), to(rgba(255, 255, 255, 0.3)));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgb(255, 255, 255) 49%, rgba(255, 255, 255, 0.3) 100%);
+    background-size: 20rem;
+    z-index: -1;
+  }
+
   .second__title > h4::after {
     display: none;
   }
 
   .second {
-    margin-bottom: 2.1875rem;
+    margin-bottom: 1.5625rem;
   }
 
   .swiper {
@@ -5655,6 +5720,19 @@ button.swiper-pagination-bullet {
 
   .third__container > p {
     text-align: left;
+  }
+
+  .third__container > p::before {
+    content: "";
+    position: absolute;
+    left: -10%;
+    top: -10%;
+    width: 100%;
+    height: 6.25rem;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), color-stop(49%, rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.3)));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.8) 49%, rgba(255, 255, 255, 0.3) 100%);
+    background-size: 20rem;
+    z-index: -1;
   }
 
   .third__top h4 {
@@ -6598,17 +6676,17 @@ button.swiper-pagination-bullet {
     }
 }
 
-@supports (font-size: clamp( 0.5rem , 0.378296146rem  +  0.6085192698vw , 0.875rem )) {
+@supports (font-size: clamp( 0.5rem , 0.4188640974rem  +  0.4056795132vw , 0.75rem )) {
     .second__slide p,
     .second__slide span {
-      font-size: clamp( 0.5rem , 0.378296146rem  +  0.6085192698vw , 0.875rem );
+      font-size: clamp( 0.5rem , 0.4188640974rem  +  0.4056795132vw , 0.75rem );
     }
 }
 
-@supports not (font-size: clamp( 0.5rem , 0.378296146rem  +  0.6085192698vw , 0.875rem )) {
+@supports not (font-size: clamp( 0.5rem , 0.4188640974rem  +  0.4056795132vw , 0.75rem )) {
     .second__slide p,
     .second__slide span {
-      font-size: calc(0.5rem + 0.375 * (100vw - 20rem) / 61.625);
+      font-size: calc(0.5rem + 0.25 * (100vw - 20rem) / 61.625);
     }
 }
 
