@@ -1660,6 +1660,20 @@ h4 {
   font-weight: 400;
   line-height: 100%;
   color: #05357a;
+  position: relative;
+}
+
+.first__container h2::after {
+  content: "";
+  position: absolute;
+  left: 0%;
+  bottom: -10%;
+  width: 100%;
+  height: 140%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), color-stop(49%, rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.3)));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.8) 49%, rgba(255, 255, 255, 0.3) 100%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .first__decor {
@@ -1749,11 +1763,11 @@ h4 {
   content: "";
   position: absolute;
   right: -20%;
-  top: -80%;
-  width: 20rem;
-  height: 20rem;
+  top: -160%;
+  width: 13.75rem;
+  height: 13.75rem;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 49%, rgba(255, 255, 255, 0.1) 49%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 49%, rgba(255, 255, 255, 0.3) 49%);
   z-index: -1;
   pointer-events: none;
 }
@@ -1889,6 +1903,23 @@ h4 {
   z-index: 5;
 }
 
+.second__container h3 {
+  position: relative;
+}
+
+.second__container h3::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  top: -10%;
+  width: 100%;
+  height: 120%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), color-stop(49%, rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.3)));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.8) 49%, rgba(255, 255, 255, 0.3) 100%);
+  background-size: 20rem;
+  z-index: -1;
+}
+
 .second__decor {
   position: absolute;
   bottom: -90%;
@@ -1996,6 +2027,7 @@ h4 {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 0.3125rem;
+  position: relative;
 }
 
 .second__present--left p {
@@ -2059,7 +2091,7 @@ h4 {
   width: 100%;
 }
 
-.second__title > h4 {
+.second__title h4 {
   font-style: italic;
   font-weight: 400;
   line-height: 100%;
@@ -2071,31 +2103,27 @@ h4 {
   z-index: 20;
 }
 
-.no-webp .second__title > h4::before{
-  background: center/contain no-repeat url("../img/second/bg-p.png"); }
-
-.second__title > h4::before {
+.second__title h4::before {
   content: "";
   position: absolute;
-  left: 30%;
-  top: -9.375rem;
-  width: 100%;
-  height: 20rem;
-  background-size: 20rem;
+  left: 50%;
+  top: -6.25rem;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 49%, rgba(255, 255, 255, 0.1) 100%);
   z-index: -1;
 }
 
-.no-webp .second__title > h4::after{
-  background: center/contain no-repeat url("../img/second/bg-p.png"); }
-
-.second__title > h4::after {
+.second__title h4::after {
   content: "";
   position: absolute;
-  left: 30%;
+  left: 20%;
   top: -6.25rem;
-  width: 100%;
-  height: 20rem;
-  background-size: 20rem;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 49%, rgba(255, 255, 255, 0.1) 100%);
   z-index: -1;
 }
 
@@ -2246,7 +2274,7 @@ h4 {
   content: "";
   position: absolute;
   left: -10%;
-  top: -80%;
+  top: -40%;
   width: 100%;
   height: 6.25rem;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), color-stop(49%, rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.3)));
@@ -2577,6 +2605,19 @@ h4 {
   pointer-events: none;
 }
 
+.four__right::before {
+  content: "";
+  position: absolute;
+  left: -33%;
+  bottom: -40%;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 49%, rgba(255, 255, 255, 0.1) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
 .four__number {
   position: relative;
   z-index: 4;
@@ -2632,6 +2673,22 @@ h4 {
 
 .four__box > p span {
   font-weight: 700;
+}
+
+.four__text {
+  position: relative;
+}
+
+.four__text::before {
+  content: "";
+  position: absolute;
+  left: 0%;
+  top: -35%;
+  width: 90%;
+  height: 160%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), color-stop(49%, rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.3)));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.9) 49%, rgba(255, 255, 255, 0.3) 100%);
+  z-index: -1;
 }
 
 .four__spollers {
@@ -2809,6 +2866,10 @@ h4 {
   color: #ffffff;
 }
 
+.five {
+  padding-bottom: 1.25rem;
+}
+
 .five__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2820,6 +2881,26 @@ h4 {
 
 .five__container h4 {
   max-width: 21.25rem;
+}
+
+.five__container h3 {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.five__container h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -50%;
+  width: 100%;
+  height: 3.75rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), color-stop(49%, rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.3)));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.8) 49%, rgba(255, 255, 255, 0.3) 100%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .five__left {
@@ -2942,6 +3023,11 @@ h4 {
   background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
   z-index: 2;
   pointer-events: none;
+}
+
+.five__number {
+  position: relative;
+  z-index: 4;
 }
 
 .five__right {
@@ -4783,7 +4869,7 @@ button.swiper-pagination-bullet {
     margin-bottom: 2.5rem;
   }
 
-  .second__title > h4 {
+  .second__title h4 {
     font-size: 1.5rem;
   }
 
@@ -4810,6 +4896,10 @@ button.swiper-pagination-bullet {
 
   .third .tabs__title {
     gap: 2.125rem;
+  }
+
+  .four__container {
+    row-gap: 4.0625rem;
   }
 
   .four__box > p {
@@ -5145,7 +5235,7 @@ button.swiper-pagination-bullet {
     margin-bottom: 0.625rem;
   }
 
-  .second__title > h4 {
+  .second__title h4 {
     font-size: 1.25rem;
   }
 
@@ -5172,6 +5262,10 @@ button.swiper-pagination-bullet {
 
   .third .tabs__title {
     gap: 1.25rem;
+  }
+
+  .four__container {
+    row-gap: 2.1875rem;
   }
 
   .four__box > p {
@@ -5614,19 +5708,6 @@ button.swiper-pagination-bullet {
     padding-left: 1.6875rem;
   }
 
-  .second__container h3::before {
-    content: "";
-    position: absolute;
-    left: -10%;
-    top: -80%;
-    width: 100%;
-    height: 6.25rem;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), color-stop(49%, rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0.3)));
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.8) 49%, rgba(255, 255, 255, 0.3) 100%);
-    background-size: 20rem;
-    z-index: -1;
-  }
-
   .second__decor {
     display: none;
   }
@@ -5674,30 +5755,40 @@ button.swiper-pagination-bullet {
     font-size: 2rem;
   }
 
+  .second__present--left::before {
+    content: "";
+    position: absolute;
+    left: 5%;
+    top: -5%;
+    width: 100%;
+    height: 120%;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), color-stop(49%, rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.6)));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.9) 49%, rgba(255, 255, 255, 0.6) 100%);
+    z-index: -1;
+  }
+
   .second__present--right p {
     text-align: right;
     padding-right: 2.375rem;
   }
 
-  .second__title > h4 {
+  .second__title h4 {
     max-width: 18.75rem;
     text-align: left;
   }
 
-  .second__title > h4::before {
-    content: "";
-    position: absolute;
+  .second__title h4::before {
     left: -10%;
-    top: -60%;
+    top: -10%;
     width: 100%;
-    height: 10rem;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), color-stop(49%, rgb(255, 255, 255)), to(rgba(255, 255, 255, 0.3)));
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgb(255, 255, 255) 49%, rgba(255, 255, 255, 0.3) 100%);
+    height: 140%;
+    border-radius: 0;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), color-stop(49%, rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.6)));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.9) 49%, rgba(255, 255, 255, 0.6) 100%);
     background-size: 20rem;
-    z-index: -1;
   }
 
-  .second__title > h4::after {
+  .second__title h4::after {
     display: none;
   }
 
@@ -5938,6 +6029,10 @@ button.swiper-pagination-bullet {
     padding-left: 2.375rem;
   }
 
+  .four__text::before {
+    left: -5%;
+  }
+
   .four__img {
     z-index: -2;
     -webkit-transform: scale(1.1);
@@ -6028,6 +6123,10 @@ button.swiper-pagination-bullet {
     -ms-flex-item-align: start;
         align-self: flex-start;
     max-width: 100%;
+  }
+
+  .five form input {
+    text-align: left;
   }
 
   .five form input::-webkit-input-placeholder, .five form .select::-webkit-input-placeholder {
@@ -6661,13 +6760,13 @@ button.swiper-pagination-bullet {
 }
 
 @supports (font-size: clamp( 1.25rem , 1.1688640974rem  +  0.4056795132vw , 1.5rem )) {
-    .second__title > h4 {
+    .second__title h4 {
       font-size: clamp( 1.25rem , 1.1688640974rem  +  0.4056795132vw , 1.5rem );
     }
 }
 
 @supports not (font-size: clamp( 1.25rem , 1.1688640974rem  +  0.4056795132vw , 1.5rem )) {
-    .second__title > h4 {
+    .second__title h4 {
       font-size: calc(1.25rem + 0.25 * (100vw - 20rem) / 61.625);
     }
 }
@@ -6743,6 +6842,18 @@ button.swiper-pagination-bullet {
 @supports not (gap: clamp( 1.25rem , 0.9660243408rem  +  1.4198782961vw , 2.125rem )) {
     .third .tabs__title {
       gap: calc(1.25rem + 0.875 * (100vw - 20rem) / 61.625);
+    }
+}
+
+@supports (row-gap: clamp( 2.1875rem , 1.5789807302rem  +  3.0425963489vw , 4.0625rem )) {
+    .four__container {
+      row-gap: clamp( 2.1875rem , 1.5789807302rem  +  3.0425963489vw , 4.0625rem );
+    }
+}
+
+@supports not (row-gap: clamp( 2.1875rem , 1.5789807302rem  +  3.0425963489vw , 4.0625rem )) {
+    .four__container {
+      row-gap: calc(2.1875rem + 1.875 * (100vw - 20rem) / 61.625);
     }
 }
 
@@ -7152,10 +7263,6 @@ button.swiper-pagination-bullet {
             justify-content: start;
   }
 }
-
-.webp .second__title > h4::before{ background: center/contain no-repeat url(../img/second/bg-p.webp); }
-
-.webp .second__title > h4::after{ background: center/contain no-repeat url(../img/second/bg-p.webp); }
 
 @media (max-width: 47.99875em){
 
