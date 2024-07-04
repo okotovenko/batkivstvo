@@ -456,6 +456,35 @@
                 const maxMoveX = toggleWidth - toggleLeftWidth;
                 let startX, currentX, isDragging = false;
                 let popup = document.querySelector(".popup");
+                toggleLeft.addEventListener("mousedown", (function(e) {
+                    startX = e.clientX;
+                    isDragging = true;
+                    toggleLeft.style.transition = "none";
+                }));
+                toggleLeft.addEventListener("mousemove", (function(e) {
+                    if (!isDragging) return;
+                    currentX = e.clientX;
+                    let moveX = currentX - startX;
+                    if (moveX >= 0 && moveX <= maxMoveX) toggleLeft.style.transform = `translateX(${moveX}px)`;
+                }));
+                toggleLeft.addEventListener("mouseup", (function(e) {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    toggleLeft.style.transition = "transform 0.3s ease";
+                    if (!toggle.classList.contains(".active")) if (currentX - startX > maxMoveX / 2) {
+                        toggleLeft.style.transform = `translateX(${maxMoveX}px)`;
+                        toggleLeft.classList.add("moved");
+                        popup.setAttribute("aria-hidden", "false");
+                        popup.classList.add("popup_show");
+                        document.documentElement.classList.add("popup-show", "lock");
+                    } else {
+                        toggleLeft.style.transform = `translateX(0px)`;
+                        toggleLeft.classList.remove("moved");
+                        popup.setAttribute("aria-hidden", "true");
+                        popup.classList.remove("popup_show");
+                        document.documentElement.classList.remove("popup-show", "lock");
+                    }
+                }));
                 toggleLeft.addEventListener("touchstart", (function(e) {
                     startX = e.touches[0].clientX;
                     isDragging = true;
@@ -486,14 +515,19 @@
                     }
                 }));
                 document.addEventListener("click", function(e) {
-                    if (document.documentElement.classList.contains("popup-show", "lock")) {
+                    const popupContent = e.target.closest(".popup__content");
+                    const popupCloseButton = e.target.closest(".popup__close");
+                    const popup = document.querySelector(".popup");
+                    if (document.documentElement.classList.contains("popup-show", "lock")) if (!popupContent || popupCloseButton) {
                         e.preventDefault();
-                        console.log(toggleLeft);
-                        toggleLeft.style.transform = `translateX(0px)`;
-                        toggleLeft.classList.remove("moved");
                         popup.setAttribute("aria-hidden", "true");
                         popup.classList.remove("popup_show");
                         document.documentElement.classList.remove("popup-show", "lock");
+                        const toggleLeft = document.querySelector(".toggle__left");
+                        if (toggleLeft && toggleLeft.classList.contains("moved")) {
+                            toggleLeft.style.transform = `translateX(0px)`;
+                            toggleLeft.classList.remove("moved");
+                        }
                     }
                 }.bind(this));
             }));
