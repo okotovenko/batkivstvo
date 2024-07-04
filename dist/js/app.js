@@ -373,6 +373,8 @@
             }
         }
     }
+    //! МОЖНА ВИЙТИ ЗА РАМКИ НА ПК
+    //! ПРИ ВИХОДІ ЗА РАМКИ ПОВЕРТАЄТЬСЯ, ПОПАП НЕ ВІДКРИВАЄТЬСЯ
     class Popup {
         constructor(options) {
             let config = {
@@ -456,22 +458,58 @@
                 const maxMoveX = toggleWidth - toggleLeftWidth;
                 let startX, currentX, isDragging = false;
                 let popup = document.querySelector(".popup");
+                function onMouseMove(e) {
+                    if (!isDragging) return;
+                    currentX = e.clientX;
+                    let moveX = currentX - startX;
+                    if (moveX < 0) moveX = 0;
+                    if (moveX > maxMoveX) moveX = maxMoveX;
+                    toggleLeft.style.transform = `translateX(${moveX}px)`;
+                }
+                function onMouseUp(e) {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    toggleLeft.style.transition = "transform 0.3s ease";
+                    document.removeEventListener("mousemove", onMouseMove);
+                    document.removeEventListener("mouseup", onMouseUp);
+                    console.log(currentX);
+                    if (currentX - startX > maxMoveX / 2 && currentX < 1194 || currentX > 1194) {
+                        console.log(currentX);
+                        toggleLeft.style.transform = `translateX(${maxMoveX}px)`;
+                        toggleLeft.classList.add("moved");
+                        popup.setAttribute("aria-hidden", "false");
+                        popup.classList.add("popup_show");
+                        document.documentElement.classList.add("popup-show", "lock");
+                    } else {
+                        toggleLeft.style.transform = `translateX(0px)`;
+                        toggleLeft.classList.remove("moved");
+                        popup.setAttribute("aria-hidden", "true");
+                        popup.classList.remove("popup_show");
+                        document.documentElement.classList.remove("popup-show", "lock");
+                    }
+                }
                 toggleLeft.addEventListener("mousedown", (function(e) {
                     startX = e.clientX;
                     isDragging = true;
                     toggleLeft.style.transition = "none";
+                    document.addEventListener("mousemove", onMouseMove);
+                    document.addEventListener("mouseup", onMouseUp);
                 }));
-                toggleLeft.addEventListener("mousemove", (function(e) {
+                function onTouchMove(e) {
                     if (!isDragging) return;
-                    currentX = e.clientX;
+                    currentX = e.touches[0].clientX;
                     let moveX = currentX - startX;
-                    if (moveX >= 0 && moveX <= maxMoveX) toggleLeft.style.transform = `translateX(${moveX}px)`;
-                }));
-                toggleLeft.addEventListener("mouseup", (function(e) {
+                    if (moveX < 0) moveX = 0;
+                    if (moveX > maxMoveX) moveX = maxMoveX;
+                    toggleLeft.style.transform = `translateX(${moveX}px)`;
+                }
+                function onTouchEnd(e) {
                     if (!isDragging) return;
                     isDragging = false;
                     toggleLeft.style.transition = "transform 0.3s ease";
-                    if (!toggle.classList.contains(".active")) if (currentX - startX > maxMoveX / 2) {
+                    document.removeEventListener("touchmove", onTouchMove);
+                    document.removeEventListener("touchend", onTouchEnd);
+                    if (currentX - startX > maxMoveX / 2) {
                         toggleLeft.style.transform = `translateX(${maxMoveX}px)`;
                         toggleLeft.classList.add("moved");
                         popup.setAttribute("aria-hidden", "false");
@@ -484,35 +522,13 @@
                         popup.classList.remove("popup_show");
                         document.documentElement.classList.remove("popup-show", "lock");
                     }
-                }));
+                }
                 toggleLeft.addEventListener("touchstart", (function(e) {
                     startX = e.touches[0].clientX;
                     isDragging = true;
                     toggleLeft.style.transition = "none";
-                }));
-                toggleLeft.addEventListener("touchmove", (function(e) {
-                    if (!isDragging) return;
-                    currentX = e.touches[0].clientX;
-                    let moveX = currentX - startX;
-                    if (moveX >= 0 && moveX <= maxMoveX) toggleLeft.style.transform = `translateX(${moveX}px)`;
-                }));
-                toggleLeft.addEventListener("touchend", (function(e) {
-                    if (!isDragging) return;
-                    isDragging = false;
-                    toggleLeft.style.transition = "transform 0.3s ease";
-                    if (!toggle.classList.contains(".active")) if (currentX - startX > maxMoveX / 2) {
-                        toggleLeft.style.transform = `translateX(${maxMoveX}px)`;
-                        toggleLeft.classList.add("moved");
-                        popup.setAttribute("aria-hidden", "false");
-                        popup.classList.add("popup_show");
-                        document.documentElement.classList.add("popup-show", "lock");
-                    } else {
-                        toggleLeft.style.transform = `translateX(0px)`;
-                        toggleLeft.classList.remove("moved");
-                        popup.setAttribute("aria-hidden", "true");
-                        popup.classList.remove("popup_show");
-                        document.documentElement.classList.remove("popup-show", "lock");
-                    }
+                    document.addEventListener("touchmove", onTouchMove);
+                    document.addEventListener("touchend", onTouchEnd);
                 }));
                 document.addEventListener("click", function(e) {
                     const popupContent = e.target.closest(".popup__content");
@@ -607,9 +623,7 @@
                         const autoplay = this.options.setAutoplayYoutube ? "autoplay;" : "";
                         iframe.setAttribute("allow", `${autoplay}; encrypted-media`);
                         iframe.setAttribute("src", urlVideo);
-                        if (!this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`)) {
-                            this.targetOpen.element.querySelector(".popup__text").setAttribute(`${this.options.youtubePlaceAttribute}`, "");
-                        }
+                        if (!this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`)) this.targetOpen.element.querySelector(".popup__text").setAttribute(`${this.options.youtubePlaceAttribute}`, "");
                         this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).appendChild(iframe);
                     }
                     if (this.options.hashSettings.location) {
@@ -640,7 +654,7 @@
                         }
                     }));
                     this.popupLogging(`Открыл попап`);
-                } else this.popupLogging(`Ой ой, такого попапа нет.Проверьте корректность ввода. `);
+                } else this.popupLogging(`Ой ой, такого попапа нет. Проверьте корректность ввода. `);
             }
         }
         close(selectorValue) {
@@ -681,7 +695,7 @@
         }
         _openToHash() {
             let classInHash = document.querySelector(`.${window.location.hash.replace("#", "")}`) ? `.${window.location.hash.replace("#", "")}` : document.querySelector(`${window.location.hash}`) ? `${window.location.hash}` : null;
-            const buttons = document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) ? document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) : document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash.replace(".", "#")}"]`);
+            const buttons = document.querySelector(`[${this.options.attributeOpenButton}="${classInHash}"]`) ? document.querySelector(`[${this.options.attributeOpenButton}="${classInHash}"]`) : document.querySelector(`[${this.options.attributeOpenButton}="${classInHash.replace(".", "#")}"]`);
             if (buttons && classInHash) this.open(classInHash);
         }
         _setHash() {
@@ -708,7 +722,7 @@
             if (!this.isOpen && this.lastFocusEl) this.lastFocusEl.focus(); else focusable[0].focus();
         }
         popupLogging(message) {
-            this.options.logging ? FLS(`[Попапос]: ${message}`) : null;
+            this.options.logging ? console.log(`[Попапос]: ${message}`) : null;
         }
     }
     flsModules.popup = new Popup({});
