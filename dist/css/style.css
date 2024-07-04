@@ -1766,7 +1766,6 @@ h4 {
       -ms-flex-align: end;
           align-items: end;
   position: relative;
-  border: 1px solid #000;
 }
 
 .first__present > img,
@@ -5561,6 +5560,9 @@ button.swiper-pagination-bullet {
             flex: 0 1 auto;
     width: 100%;
     z-index: 3;
+    -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+            transform: scale(0.9);
   }
 
   .first__present::after {
@@ -5651,7 +5653,9 @@ button.swiper-pagination-bullet {
 
   .second__present {
     width: 100%;
-    margin-left: -2.5rem;
+    -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+            transform: scale(0.9);
   }
 
   .second__content {
@@ -5886,10 +5890,6 @@ button.swiper-pagination-bullet {
     background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 49%);
     z-index: 3;
     pointer-events: none;
-  }
-
-  .four .first__present {
-    margin-left: -1.25rem;
   }
 
   .four__top {
