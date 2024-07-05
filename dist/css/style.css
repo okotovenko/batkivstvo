@@ -964,7 +964,7 @@ body::after {
 
 .draad-line.draad-line--_icon-circle {
   pointer-events: none;
-  z-index: 1 !important;
+  z-index: 0 !important;
 }
 
 .number-opacity {
@@ -1803,7 +1803,7 @@ h4 {
   width: 100%;
   max-width: 26.875rem;
   text-align: left;
-  padding-top: 1.25rem;
+  padding-top: 1.875rem;
   font-style: italic;
   font-weight: 400;
   line-height: 100%;
@@ -5607,7 +5607,7 @@ button.swiper-pagination-bullet {
     background: top/contain no-repeat url("../img/first/bg-mob.png"); }
 
   .first__container {
-    z-index: -1;
+    z-index: 1;
     padding-top: 25.375rem;
   }
 
