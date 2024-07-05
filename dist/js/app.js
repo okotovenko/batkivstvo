@@ -9253,7 +9253,7 @@
         absoluteUnits: true,
         responsive: true,
         lineWidth: 3,
-        lineOpacity: .8,
+        lineOpacity: .3,
         color: "#028fff",
         smoothing: .3,
         dasharray: "5 10",

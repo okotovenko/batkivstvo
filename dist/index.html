@@ -11,7 +11,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240704231857">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240705232008">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<!-- Кодування сторінки: ширина області перегляду така ж, як і ширина екрану; зум за замовчуванням 100%; заборона масштабувати контент користувачу -->
@@ -90,12 +90,16 @@
 			</div>
 			<secction class="page__first first">
 				<div class="first__bg">
-					<picture><source srcset="img/first/bg.webp" type="image/webp"><img class="first__bg--desk" src="img/first/bg.png" alt="family"></picture>
-					<!-- <picture><source srcset="img/first/bg-mob.webp" type="image/webp"><img class="first__bg--mob" src="img/first/bg-mob.png" alt="family"></picture> -->
-					<div class="first__shadow--left"></div>
-					<div class="first__shadow--right"></div>
+					<div class="first--fb__container">
+						<picture><source srcset="img/first/bg.webp" type="image/webp"><img class="first__bg--desk" src="img/first/bg.png" alt="family"></picture>
+						<div class="first__shadow--left"></div>
+						<div class="first__shadow--right"></div>
+					</div>
 				</div>
 				<div class="first__container">
+					<div class="first__dec">
+						<img src="img/decor-04.svg" alt="decor">
+					</div>
 					<div class="first__decor">
 						<img class="first__desk" src="img/decor-01.svg" alt="decor">
 						<img class="first__mob" src="img/second/second-decor-mob.svg" alt="decor">
@@ -115,10 +119,12 @@
 							</div>
 							<div class="number number-opacity number-opacity--4"><span class="element element--opacity _icon-circle"></span>
 							</div>
-							<div class="number number-opacity number-opacity--5"><span class="element element--opacity _icon-circle"></span>
-							</div>
-							<div class="number number-opacity number-opacity--6"><span class="element element--opacity _icon-circle"></span>
-							</div>
+							<!-- <div class="number number-opacity number-opacity--5"><span
+									class="element element--opacity _icon-circle"></span>
+							</div> -->
+							<!-- <div class="number number-opacity number-opacity--6"><span
+									class="element element--opacity _icon-circle"></span>
+							</div> -->
 							<!-- <div class="number number-opacity number-opacity--7"><span
 									class="element element--opacity _icon-circle"></span>
 							</div> -->
@@ -130,7 +136,7 @@
 							<!-- <div class="number number-opacity number-opacity--10"><span
 									class="element element--opacity _icon-circle"></span>
 							</div> -->
-							<h3>Перша консультація репродуктолога</h3>
+							<h3>Перша консультація <br> репродуктолога безкоштовна</h3>
 							<div class="first__toggle toggle" data-popup="#popup">
 								<div class="toggle__left">
 									<picture><source srcset="img/first/sp.webp" type="image/webp"><img class="toggle__button" src="img/first/sp.png" alt="sp"></picture>
@@ -156,18 +162,25 @@
 					</div>
 					<div class="first__bottom">
 						<h4>Якщо Вам необхідна повторна консультація репродуктолога або розшифровка аналізів, ми поруч</h4>
-						<div class="first__present">
-							<img src="img/first/present.svg" alt="present">
-							<div class="first__content">
-								<div class="first__present--left">
-									<span>0 грн</span>
-									<p>900 грн</p>
-								</div>
-								<div class="first__present--right">
-									<p>-100%</p>
+						<div class="first__box">
+							<div class="first__present">
+								<img class="first__present--desk" src="img/second/present-second.svg" alt="present">
+								<img class="first__present--mob" src="img/first/present.svg" alt="present">
+								<div class="first__content">
+									<div class="first__present--left">
+										<span>0 грн</span>
+										<p>900 грн</p>
+									</div>
+									<div class="first__present--right">
+										<p>-100%</p>
+									</div>
 								</div>
 							</div>
+							<p>Лікар-репродуктолог запропонує вам
+								індивідуальний план обстеження та розпише попередній алгоритм дій
+							</p>
 						</div>
+
 					</div>
 				</div>
 			</secction>
@@ -183,11 +196,9 @@
 						</div> -->
 						<div class="number number-opacity number-opacity--2-2"><span class="element element--opacity _icon-circle"></span>
 						</div>
-						<!-- <div class="number number-opacity number-opacity--2-3"><span
-								class="element element--opacity _icon-circle"></span>
-						</div> -->
-						<h3>Повторна консультація <br>
-							безкоштовна</h3>
+						<div class="number number-opacity number-opacity--2-3"><span class="element element--opacity _icon-circle"></span>
+						</div>
+						<h3>Повторна консультація</h3>
 						<div class="first__toggle toggle" data-popup="#popup">
 							<div class="toggle__left">
 								<picture><source srcset="img/first/sp.webp" type="image/webp"><img class="toggle__button" src="img/first/sp.png" alt="sp"></picture>
@@ -272,10 +283,12 @@
 							генетичними проблемами безпліддя, з різним індексом маси тіла і не тільки.</h4>
 						<div class="third__right">
 							<div class="third__number number--right number">03<span class="element _icon-circle"></span></div>
-							<div class="number number-opacity number-opacity--3-1"><span class="element element--opacity _icon-circle"></span>
-							</div>
-							<div class="number number-opacity number-opacity--3-2"><span class="element element--opacity _icon-circle"></span>
-							</div>
+							<!-- <div class="number number-opacity number-opacity--3-1"><span
+									class="element element--opacity _icon-circle"></span>
+							</div> -->
+							<!-- <div class="number number-opacity number-opacity--3-2"><span
+									class="element element--opacity _icon-circle"></span>
+							</div> -->
 							<h3>Лікування</h3>
 							<div class="third__toggle toggle" data-popup="#popup">
 								<div class="toggle__left">
@@ -361,14 +374,18 @@
 							</div> -->
 							<div class="number number-opacity number-opacity--4-2"><span class="element element--opacity _icon-circle"></span>
 							</div>
-							<div class="number number-opacity number-opacity--4-3"><span class="element element--opacity _icon-circle"></span>
+							<!-- <div class="number number-opacity number-opacity--4-3"><span
+									class="element element--opacity _icon-circle"></span>
 							</div>
-							<div class="number number-opacity number-opacity--4-4"><span class="element element--opacity _icon-circle"></span>
+							<div class="number number-opacity number-opacity--4-4"><span
+									class="element element--opacity _icon-circle"></span>
 							</div>
-							<div class="number number-opacity number-opacity--4-5"><span class="element element--opacity _icon-circle"></span>
+							<div class="number number-opacity number-opacity--4-5"><span
+									class="element element--opacity _icon-circle"></span>
 							</div>
-							<div class="number number-opacity number-opacity--4-6"><span class="element element--opacity _icon-circle"></span>
-							</div>
+							<div class="number number-opacity number-opacity--4-6"><span
+									class="element element--opacity _icon-circle"></span>
+							</div> -->
 							<h3>ВагІТНІСТЬ</h3>
 							<div class="four__toggle toggle" data-popup="#popup">
 								<div class="toggle__left">
@@ -573,7 +590,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240704231857"></script>
+	<script src="js/app.min.js?_v=20240705232008"></script>
 </body>
 
 </html>
