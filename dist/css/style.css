@@ -964,7 +964,7 @@ body::after {
 
 .draad-line.draad-line--_icon-circle {
   pointer-events: none;
-  z-index: 0 !important;
+  z-index: 1;
 }
 
 .number-opacity {
@@ -5464,6 +5464,10 @@ button.swiper-pagination-bullet {
 }
 
 @media (max-width: 47.99875em) {
+  .draad-line.draad-line--_icon-circle {
+    z-index: 0;
+  }
+
   .number-opacity--2 {
     left: 80%;
     top: -15%;
