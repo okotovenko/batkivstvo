@@ -5499,10 +5499,6 @@ button.swiper-pagination-bullet {
 }
 
 @media (max-width: 47.99875em) {
-  .draad-line.draad-line--_icon-circle {
-    z-index: 0;
-  }
-
   .number-opacity--2 {
     left: 80%;
     top: -15%;
@@ -5540,7 +5536,7 @@ button.swiper-pagination-bullet {
 
   .number-opacity--4-3 {
     left: 65%;
-    top: 760%;
+    top: 730%;
   }
 
   .number-opacity--5-2 {
@@ -6327,6 +6323,12 @@ button.swiper-pagination-bullet {
 
   .swiper::after {
     display: none;
+  }
+}
+
+@media (max-width: 26.875em) {
+  .draad-line.draad-line--_icon-circle {
+    z-index: 0;
   }
 }
 
