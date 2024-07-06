@@ -5500,7 +5500,7 @@ button.swiper-pagination-bullet {
 
 @media (max-width: 47.99875em) {
   .draad-line.draad-line--_icon-circle {
-    z-index: 1;
+    z-index: 0;
   }
 
   .number-opacity--2 {
@@ -5540,7 +5540,7 @@ button.swiper-pagination-bullet {
 
   .number-opacity--4-3 {
     left: 65%;
-    top: 800%;
+    top: 760%;
   }
 
   .number-opacity--5-2 {
@@ -5560,7 +5560,7 @@ button.swiper-pagination-bullet {
 
   .number-opacity--5-5 {
     left: 85%;
-    top: 150%;
+    top: 155%;
   }
 
   .menu__list {
