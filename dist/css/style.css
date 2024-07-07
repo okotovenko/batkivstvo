@@ -1095,6 +1095,7 @@ body::after {
       -ms-flex-pack: end;
           justify-content: end;
   margin-top: 1.25rem;
+  padding-bottom: 6.875rem;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -5906,7 +5907,7 @@ button.swiper-pagination-bullet {
 
   .second__present {
     width: 100%;
-    margin-left: 1.25rem;
+    margin-left: 2.5rem;
     -webkit-transform: scale(0.9);
         -ms-transform: scale(0.9);
             transform: scale(0.9);
@@ -6332,6 +6333,13 @@ button.swiper-pagination-bullet {
 
   .five form {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 47.99875em) and (max-height: 25em) {
+  .fixed {
+    bottom: 2.3125rem;
+    bottom: 37px;
   }
 }
 
