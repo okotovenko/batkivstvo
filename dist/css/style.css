@@ -5135,6 +5135,10 @@ button.swiper-pagination-bullet {
 }
 
 @media (max-width: 75em) {
+  .menu ul {
+    padding-right: 2.5rem;
+  }
+
   .five {
     padding-bottom: 6.25rem;
   }
@@ -5185,10 +5189,6 @@ button.swiper-pagination-bullet {
 
   .four__box .first__present--left {
     padding-left: 0.625rem;
-  }
-
-  .four__box .first__present--left p {
-    margin-left: 1.5625rem;
   }
 }
 
@@ -5521,10 +5521,6 @@ button.swiper-pagination-bullet {
     top: -2%;
   }
 
-  .menu ul {
-    padding-right: 2.1875rem;
-  }
-
   .first__dec {
     top: -30%;
     left: -95%;
@@ -5658,7 +5654,7 @@ button.swiper-pagination-bullet {
 
   .number-opacity--5-5 {
     left: 90%;
-    bottom: 0;
+    top: 55%;
   }
 
   .menu__list {
@@ -5910,7 +5906,7 @@ button.swiper-pagination-bullet {
 
   .second__present {
     width: 100%;
-    margin-left: 2.5rem;
+    margin-left: 1.25rem;
     -webkit-transform: scale(0.9);
         -ms-transform: scale(0.9);
             transform: scale(0.9);
@@ -6417,10 +6413,6 @@ button.swiper-pagination-bullet {
     -webkit-transform: scale(0.9);
         -ms-transform: scale(0.9);
             transform: scale(0.9);
-  }
-
-  .second__present {
-    margin-left: 1.25rem;
   }
 }
 
