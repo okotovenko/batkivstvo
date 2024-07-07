@@ -36,6 +36,10 @@
 	content: "\e900"
 }
 
+:root {
+	--scrollbar-width: 0px
+}
+
 * {
 	padding: 0;
 	margin: 0;
@@ -1045,6 +1049,7 @@ body::after {
 	-webkit-box-pack: end;
 	-ms-flex-pack: end;
 	justify-content: end;
+	padding-bottom: 8.25rem;
 	-webkit-overflow-scrolling: touch
 }
 
@@ -1066,7 +1071,6 @@ body::after {
 	-ms-flex-pack: end;
 	justify-content: end;
 	margin-top: 1.25rem;
-	padding-bottom: 6.875rem;
 	-webkit-overflow-scrolling: touch
 }
 
@@ -1091,7 +1095,7 @@ body::after {
 	width: -moz-fit-content;
 	width: fit-content;
 	pointer-events: visible;
-	padding-right: 1.25rem
+	padding-right: 2.5rem
 }
 
 .menu ul li {
@@ -1156,7 +1160,7 @@ body::after {
 
 .fixed {
 	position: fixed;
-	right: 70px;
+	right: calc(70px + var(--scrollbar-width, 0px));
 	bottom: 1.25rem;
 	width: 19.0625rem;
 	height: 5rem;
@@ -1169,6 +1173,7 @@ body::after {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+	gap: 1.625rem;
 	z-index: 150;
 	-webkit-transition: all .3s ease 0s;
 	transition: all .3s ease 0s
@@ -4748,7 +4753,6 @@ button.swiper-pagination-bullet {
 	-ms-overflow-style: none
 }
 
-
 @media (min-width:94.5em) {
 	h4 {
 		font-size: 1.5rem
@@ -4872,10 +4876,6 @@ button.swiper-pagination-bullet {
 		max-width: 33.125rem
 	}
 
-	.menu__body {
-		padding-bottom: 8.25rem
-	}
-
 	.menu ul {
 		bottom: 8.25rem
 	}
@@ -4898,10 +4898,6 @@ button.swiper-pagination-bullet {
 
 	.menu ul li p {
 		font-size: 1rem
-	}
-
-	.fixed {
-		gap: 1.625rem
 	}
 
 	.fixed__left {
@@ -5118,6 +5114,10 @@ button.swiper-pagination-bullet {
 		top: -2%
 	}
 
+	.menu__list {
+		padding-bottom: 6.875rem
+	}
+
 	.first__dec {
 		top: -30%;
 		left: -95%;
@@ -5270,6 +5270,12 @@ button.swiper-pagination-bullet {
 
 	.menu ul li p {
 		max-width: 5.9375rem
+	}
+
+	.fixed {
+		right: calc(30px + var(--scrollbar-width, 0px));
+		width: 16.1875rem;
+		height: 3.25rem
 	}
 
 	.fixed {
@@ -5971,6 +5977,32 @@ button.swiper-pagination-bullet {
 	}
 }
 
+@media (max-width:47.99875em) and (min-width:47.99875em) {
+	.first__container {
+		padding-top: 39.75rem
+	}
+}
+
+@media (max-width:47.99875em) and (min-width:31.25em) and (max-width:47.99875em) {
+	@supports (padding-top:clamp(25.375rem, -1.4460314203rem + 85.8273005448vw, 39.75rem)) {
+		.first__container {
+			padding-top: clamp(25.375rem, -1.4460314203rem + 85.8273005448vw, 39.75rem)
+		}
+	}
+
+	@supports not (padding-top:clamp(25.375rem, -1.4460314203rem + 85.8273005448vw, 39.75rem)) {
+		.first__container {
+			padding-top: calc(25.375rem + 14.375 * (100vw - 31.25rem)/ 16.74875)
+		}
+	}
+}
+
+@media (max-width:47.99875em) {
+	.webp .first__container {
+		background: top/contain no-repeat url(../img/first/bg-mob.webp)
+	}
+}
+
 @media (max-width:37.5em) {
 	.second__present--left::before {
 		content: "";
@@ -5982,16 +6014,6 @@ button.swiper-pagination-bullet {
 		background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, .6)), color-stop(49%, rgba(255, 255, 255, .9)), to(rgba(255, 255, 255, .6)));
 		background: linear-gradient(180deg, rgba(255, 255, 255, .6) 0, rgba(255, 255, 255, .9) 49%, rgba(255, 255, 255, .6) 100%);
 		z-index: -1
-	}
-}
-
-@media (max-height:37.5em) and (max-width:25em) {
-	.fixed {
-		bottom: 2.1875rem
-	}
-
-	.menu-open .fixed {
-		right: 110px
 	}
 }
 
@@ -6008,16 +6030,6 @@ button.swiper-pagination-bullet {
 
 	.swiper::after {
 		display: none
-	}
-}
-
-@media (max-height:30em) and (max-width:20em) {
-	.fixed {
-		bottom: 1.5625rem
-	}
-
-	.menu-open .fixed {
-		right: 30px
 	}
 }
 
@@ -6065,7 +6077,7 @@ button.swiper-pagination-bullet {
 
 	.second__present--right p {
 		font-size: 1.875rem;
-		padding-right: 2.5rem
+		padding-right: 2.8125rem
 	}
 
 	.four .first__present--right p {
@@ -6181,10 +6193,6 @@ button.swiper-pagination-bullet {
 		max-width: 22.5rem
 	}
 
-	.menu__body {
-		padding-bottom: 6.25rem
-	}
-
 	.menu ul {
 		bottom: 6.875rem
 	}
@@ -6207,10 +6215,6 @@ button.swiper-pagination-bullet {
 
 	.menu ul li p {
 		font-size: .75rem
-	}
-
-	.fixed {
-		gap: 1.375rem
 	}
 
 	.fixed__left {
@@ -6649,18 +6653,6 @@ button.swiper-pagination-bullet {
 		}
 	}
 
-	@supports (padding-bottom:clamp(6.25rem, 5.6009127789rem + 3.2454361055vw, 8.25rem)) {
-		.menu__body {
-			padding-bottom: clamp(6.25rem, 5.6009127789rem + 3.2454361055vw, 8.25rem)
-		}
-	}
-
-	@supports not (padding-bottom:clamp(6.25rem, 5.6009127789rem + 3.2454361055vw, 8.25rem)) {
-		.menu__body {
-			padding-bottom: calc(6.25rem + 2 * (100vw - 20rem)/ 61.625)
-		}
-	}
-
 	@supports (bottom:clamp(6.875rem, 6.4287525355rem + 2.2312373225vw, 8.25rem)) {
 		.menu ul {
 			bottom: clamp(6.875rem, 6.4287525355rem + 2.2312373225vw, 8.25rem)
@@ -6730,18 +6722,6 @@ button.swiper-pagination-bullet {
 	@supports not (font-size:clamp(0.75rem, 0.6688640974rem + 0.4056795132vw, 1rem)) {
 		.menu ul li p {
 			font-size: calc(.75rem + .25 * (100vw - 20rem)/ 61.625)
-		}
-	}
-
-	@supports (gap:clamp(1.375rem, 1.2938640974rem + 0.4056795132vw, 1.625rem)) {
-		.fixed {
-			gap: clamp(1.375rem, 1.2938640974rem + .4056795132vw, 1.625rem)
-		}
-	}
-
-	@supports not (gap:clamp(1.375rem, 1.2938640974rem + 0.4056795132vw, 1.625rem)) {
-		.fixed {
-			gap: calc(1.375rem + .25 * (100vw - 20rem)/ 61.625)
 		}
 	}
 
@@ -7352,26 +7332,6 @@ button.swiper-pagination-bullet {
 	}
 }
 
-@media (max-width:47.99875em) and (min-width:47.99875em) {
-	.first__container {
-		padding-top: 39.75rem
-	}
-}
-
-@media (max-width:47.99875em) and (min-width:31.25em) and (max-width:47.99875em) {
-	@supports (padding-top:clamp(25.375rem, -1.4460314203rem + 85.8273005448vw, 39.75rem)) {
-		.first__container {
-			padding-top: clamp(25.375rem, -1.4460314203rem + 85.8273005448vw, 39.75rem)
-		}
-	}
-
-	@supports not (padding-top:clamp(25.375rem, -1.4460314203rem + 85.8273005448vw, 39.75rem)) {
-		.first__container {
-			padding-top: calc(25.375rem + 14.375 * (100vw - 31.25rem)/ 16.74875)
-		}
-	}
-}
-
 @media (min-width:48.06125em) and (max-width:94.5em) {
 	@supports ((-moz-column-gap:clamp(4.375rem, 1.1408172055rem + 6.7292939625vw, 7.5rem)) or (column-gap:clamp(4.375rem, 1.1408172055rem + 6.7292939625vw, 7.5rem))) {
 		.third .tabs__navigation {
@@ -7477,6 +7437,16 @@ button.swiper-pagination-bullet {
 	}
 }
 
+@media (max-height:37.5em) and (max-width:25em) {
+	.fixed {
+		bottom: 2.1875rem
+	}
+
+	.menu-open .fixed {
+		right: 110px
+	}
+}
+
 @media (max-height:30.4375em) {
 	.menu__list {
 		-webkit-box-pack: start;
@@ -7485,12 +7455,16 @@ button.swiper-pagination-bullet {
 	}
 }
 
-.webp .first__bg .first--fb__container {
-	background: top/cover no-repeat url(../img/first/bg.webp)
+@media (max-height:30em) and (max-width:20em) {
+	.fixed {
+		bottom: 1.5625rem
+	}
+
+	.menu-open .fixed {
+		right: 30px
+	}
 }
 
-@media (max-width:47.99875em) {
-	.webp .first__container {
-		background: top/contain no-repeat url(../img/first/bg-mob.webp)
-	}
+.webp .first__bg .first--fb__container {
+	background: top/cover no-repeat url(../img/first/bg.webp)
 }
