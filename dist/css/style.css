@@ -1069,13 +1069,13 @@ body::after {
   overflow: auto;
   z-index: -1;
   background: rgba(3, 8, 24, 0.7);
-  pointer-events: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
+  -webkit-overflow-scrolling: touch;
 }
 
 .menu-open .menu__body {
@@ -1097,6 +1097,7 @@ body::after {
           justify-content: end;
   margin-top: 1.25rem;
   background: red;
+  -webkit-overflow-scrolling: touch;
 }
 
 .menu ul {
@@ -5545,7 +5546,7 @@ button.swiper-pagination-bullet {
   }
 
   .menu ul {
-    padding-right: 2.8125rem;
+    padding-right: 2.1875rem;
   }
 
   .first__dec {
