@@ -8117,6 +8117,7 @@
             slidesPerView: 3,
             spaceBetween: 0,
             speed: 800,
+            autoplay: true,
             loop: true,
             on: {}
         });

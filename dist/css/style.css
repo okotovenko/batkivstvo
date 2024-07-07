@@ -991,7 +991,6 @@ body::after {
   width: 10px;
   height: 10px;
   pointer-events: none;
-  background: red;
 }
 
 .number-opacity::before {
@@ -1096,7 +1095,6 @@ body::after {
       -ms-flex-pack: end;
           justify-content: end;
   margin-top: 1.25rem;
-  background: red;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -1190,7 +1188,6 @@ body::after {
   bottom: 1.25rem;
   width: 19.0625rem;
   height: 5rem;
-  border: 1px solid #000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1563,36 +1560,15 @@ h4 {
   margin: 0 auto;
 }
 
+.no-webp .first__bg .first--fb__container{
+  background: top/cover no-repeat url("../img/first/bg.png"); }
+
 .first__bg .first--fb__container {
   width: 100%;
   height: 100%;
   position: relative;
   padding: 0;
   margin-right: -25%;
-}
-
-.first__bg .first--fb__container > img,
-.first__bg .first--fb__container > picture {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: top;
-     object-position: top;
-  position: relative;
-  z-index: 1;
-}
-
-.first__bg .first--fb__container picture source,
-.first__bg .first--fb__container picture img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: top;
-     object-position: top;
-  position: relative;
-  z-index: 1;
 }
 
 .first__bg .first--fb__container::after {
@@ -5793,7 +5769,7 @@ button.swiper-pagination-bullet {
     background: top/contain no-repeat url("../img/first/bg-mob.png"); }
 
   .first__container {
-    z-index: 1;
+    z-index: 0;
   }
 
   .first__decor {
@@ -6422,6 +6398,12 @@ button.swiper-pagination-bullet {
 @media (max-width: 26.875em) {
   .draad-line.draad-line--_icon-circle {
     z-index: 0;
+  }
+}
+
+@media (max-width: 25.625em) {
+  .first__container {
+    z-index: 1;
   }
 }
 
@@ -7456,7 +7438,6 @@ button.swiper-pagination-bullet {
   }
 
   .menu__list {
-    background: #04b61f;
     min-height: 100dvh;
     height: 100dvh;
   }
@@ -7479,6 +7460,8 @@ button.swiper-pagination-bullet {
             justify-content: start;
   }
 }
+
+.webp .first__bg .first--fb__container{ background: top/cover no-repeat url(../img/first/bg.webp); }
 
 @media (max-width: 47.99875em){
 
