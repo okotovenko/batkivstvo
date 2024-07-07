@@ -5170,6 +5170,7 @@ button.swiper-pagination-bullet {
 
   .first__present--right p {
     font-size: 1.875rem;
+    padding-left: 2.5rem;
   }
 
   .second__present--left p {
@@ -5186,6 +5187,11 @@ button.swiper-pagination-bullet {
 
   .second__present--right p {
     font-size: 1.875rem;
+    padding-right: 2.8125rem;
+  }
+
+  .four .first__present--right p {
+    padding-left: 2.8125rem;
   }
 
   .four__box .first__present--left {
