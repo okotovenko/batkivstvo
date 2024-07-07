@@ -944,12 +944,13 @@
             }));
             setTimeout((() => {
                 if (flsModules.popup) {
-                    const popup = form.dataset.popupMessage;
-                    popup ? flsModules.popup.open(popup) : null;
+                    const popup = document.querySelector("#popup");
+                    popup ? flsModules.popup.close(popup) : null;
                 }
             }), 0);
             formValidate.formClean(form);
             formLogging(`Форма отправлена!`);
+            window.location.href = "https://ivmed.ua/";
         }
         function formLogging(message) {
             FLS(`[Формы]: ${message}`);
@@ -8116,7 +8117,6 @@
             slidesPerView: 3,
             spaceBetween: 0,
             speed: 800,
-            autoplay: true,
             loop: true,
             on: {}
         });
@@ -9212,8 +9212,8 @@
             path.setAttribute("style", `fill: ${fill}; ` + `stroke: ${lineColor}; ` + `stroke-width: ${lineWidth};` + `stroke-opacity: ${lineOpacity};` + `stroke-dasharray: ${lineDasharray};` + `stroke-linecap: ${linecap}`);
             svgEl.setAttribute("style", "width: 100%; " + "min-height: 100%; " + `height: ${lastPoint - firstPoint + 1e3}px;` + "top: 0; " + "left: 0; " + "bottom: 0; " + "right: 0; " + "position: absolute; ");
             svgParent.appendChild(svgEl);
-            console.log(svgEl.height);
-        }
+            //! Додаємо функцію для анімації лінії при скролі. Якщо ввімкнути - лінія стане СУЦІЛЬНОЮ, а не ПУНКТИРНОЮ
+                }
         init() {
             this.connectingMagic(this.goThroughDots());
             let self = this;
@@ -9237,6 +9237,7 @@
         get destroy() {
             return this.destroyDraad();
         }
+        //! Анімація "росту" лінії при скролі
         animateLineOnScroll(path) {
             const pathLength = path.getTotalLength();
             path.style.strokeDasharray = pathLength;
