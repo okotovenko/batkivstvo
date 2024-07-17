@@ -4904,10 +4904,13 @@
     }));
     var selector = document.getElementById("tel");
     var selector1 = document.getElementById("tel-1");
+    var selector2 = document.getElementById("tel-2");
     var im = new Inputmask("+38 (099) 999-99-99");
     var im1 = new Inputmask("+38 (099) 999-99-99");
+    var im2 = new Inputmask("+38 (099) 999-99-99");
     im.mask(selector);
     im1.mask(selector1);
+    im2.mask(selector2);
     function ssr_window_esm_isObject(obj) {
         return obj !== null && typeof obj === "object" && "constructor" in obj && obj.constructor === Object;
     }
@@ -8113,7 +8116,6 @@
             slidesPerView: 3,
             spaceBetween: 0,
             speed: 800,
-            autoplay: true,
             loop: true,
             on: {}
         });

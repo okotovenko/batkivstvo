@@ -11,7 +11,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240707203836">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240709204616">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<!-- Кодування сторінки: ширина області перегляду така ж, як і ширина екрану; зум за замовчуванням 100%; заборона масштабувати контент користувачу -->
@@ -72,7 +72,7 @@
 									<p>зателефонувати</p>
 								</li>
 								<li>
-									<a href="#">
+									<a href="#" data-popup="#popup-2">
 										<img src="img/icons/phone-incoming.svg" alt="telegram">
 									</a>
 									<p>замовити дзвінок</p>
@@ -600,7 +600,91 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240707203836"></script>
+	<div id="popup-2" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close"></button>
+				<form action="files/sendmail/sendmail.php" data-dev enctype="multipart/form-data" class="form" method="POST">
+					<input type="hidden" name="form_subject" value="Тема листа">
+					<label class="form-label form-label-2">
+						<span>Ваш номер телефону</span>
+						<input type="tel" data-required name="tel-2" id="tel-2" autocomplete="off" maxlength="255" data-error="Error" class="input" placeholder="+38 (0__) ___-__-__">
+					</label>
+					<label class="form-label form-label--3">
+						<div data-spollers class="spollers">
+							<div class="spollers__item">
+								<button type="button" data-spoller class="spollers__title">Коли Вам краще
+									зателефонувати?</button>
+								<div class="spollers__body">
+									<div class="spollers__box">
+										<select name="select-4" id="select-4" data-class-modif="form" data-scroll>
+											<option value="10" selected>10</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+											<option value="9">9</option>
+											<option value="10">10</option>
+											<option value="11">11</option>
+											<option value="12">12</option>
+											<option value="13">13</option>
+											<option value="14">14</option>
+											<option value="15">15</option>
+											<option value="16">16</option>
+											<option value="17">17</option>
+											<option value="18">18</option>
+											<option value="19">19</option>
+											<option value="20">20</option>
+											<option value="21">21</option>
+											<option value="22">22</option>
+											<option value="23">23</option>
+											<option value="24">24</option>
+											<option value="25">25</option>
+											<option value="26">26</option>
+											<option value="27">27</option>
+											<option value="28">28</option>
+											<option value="29">29</option>
+											<option value="30">30</option>
+										</select>
+										<select name="select-5" id="select-5" data-class-modif="form" data-scroll>
+											<option value="серпень" selected>серпень</option>
+											<option value="вересень">вересень</option>
+											<option value="жовтень">жовтень</option>
+											<option value="листопад">листопад</option>
+											<option value="грудень">грудень</option>
+											<option value="січень">січень</option>
+											<option value="лютий">лютий</option>
+											<option value="березень">березень</option>
+											<option value="квітень">квітень</option>
+											<option value="травень">травень</option>
+											<option value="червень">червень</option>
+											<option value="липень">липень</option>
+										</select>
+										<select name="select-6" id="select-6" data-class-modif="form" data-scroll>
+											<option value="09:00 - 10:00" selected>09:00 - 10:00</option>
+											<option value="10:00 - 11:00">10:00 - 11:00</option>
+											<option value="11:00 - 12:00">11:00 - 12:00</option>
+											<option value="12:00 - 13:00">12:00 - 13:00</option>
+											<option value="14:00 - 15:00">13:00 - 15:00</option>
+											<option value="15:00 - 16:00">15:00 - 16:00</option>
+											<option value="16:00 - 17:00">16:00 - 17:00</option>
+											<option value="17:00 - 17:00">17:00 - 18:00</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</label>
+					<button type="submit" class="button-submit">ЗАМОВИТИ ДЗВІНОК</span></button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20240709204616"></script>
 </body>
 
 </html>
